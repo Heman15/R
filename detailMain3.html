@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Creative CV</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200|Roboto:400,700&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
     <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
@@ -92,7 +92,7 @@
             border-radius: 50%;
             z-index: 1;
         }
-        .timeline-item:nth-child(even::before) {
+        .timeline-item:nth-child(even)::before {
             left: auto;
             right: -7px;
         }
@@ -153,60 +153,93 @@
         </nav>
     </div>
 </header>
+<!-- Hero Section -->
 <div class="parallax section">
     <div class="container">
         <h1>Welcome to My Portfolio</h1>
-        <p>Discover my projects, skills, and experiences in the field of designing.</p>
+        <p>Discover my projects, skills, and experiences in the field of robotics.</p>
     </div>
 </div>
+<!-- Intro Section -->
 <div class="intro-text">
     <h1>Robotics Projects</h1>
     <p>If you can write a problem down clearly, then the matter is half solved.</p>
 </div>
+<!-- Projects Timeline -->
 <div class="page-content">
     <div class="section" id="experience">
         <div class="container cc-experience">
             <div class="h4 text-center mb-4 title">Projects</div>
             <ul class="timeline">
+                <!-- Teleoperation System (New Top Project with Video) -->
                 <li class="timeline-item" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                    <div class="timeline-item-content">
+                        <video width="460" height="422" controls autoplay muted onclick="toggleFullScreen(this)">
+                            <source src="images/ALOHA2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h4>Teleoperation System</h4>
+                        <p>
+                            Led the development of an advanced Teleoperation System that enhances robot autonomy and functionality. Utilized Model-Agnostic Meta-Learning (MAML) and imitation learning algorithms to improve action recognition and adaptive motion planning. Integrated AI-driven perception systems with robotic hardware to enable seamless human-robot collaboration and real-time task execution.
+                        </p>
+                        <p>Skills used: ROS1/ROS2, SolidWorks (CSWA), Python, C/C++, MATLAB, Point Cloud Library (PCL), MAML, Imitation Learning.</p>
+                        <p>
+                            <a href="https://drive.google.com/file/d/your_report_link/view?usp=sharing" target="_blank">Report</a> |
+                            <a href="https://github.com/Heman15/Teleoperation-System" target="_blank">Code</a>
+                        </p>
+                    </div>
+                </li>
+                <!-- 4 Degree of Freedom Robotic Arm -->
+                <li class="timeline-item" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                     <div class="timeline-item-content">
                         <img src="images/download.png" alt="4 Degree of Freedom Robotic Arm">
                         <h4>4 Degree of Freedom Robotic Arm</h4>
-                        <p>I designed a 4-degree-of-freedom robotic arm and developed custom forward, inverse, and velocity kinematics algorithms for precise control of the arm's motion. These algorithms enabled accurate positioning and movement control for various tasks, making the design suitable for efficient pick-and-place operations and other precise robotic manipulation applications.</p>
+                        <p>
+                            I designed a 4-degree-of-freedom robotic arm and developed custom forward, inverse, and velocity kinematics algorithms for precise control of the arm's motion. These algorithms enabled accurate positioning and movement control for various tasks, making the design suitable for efficient pick-and-place operations and other precise robotic manipulation applications.
+                        </p>
                         <p>Skills used: Solidworks, ROS2, Gazebo, Rviz, Python.</p>
                         <p><a href="https://drive.google.com/file/d/1FlE1fLJr12Ms9aH0N8KHaGlGl95JC8jR/view?usp=sharing" target="_blank">View Report</a></p>
                     </div>
                 </li>
-                <li class="timeline-item" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                <!-- LLM Enhanced Robot Crowd Navigation -->
+                <li class="timeline-item" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                     <div class="timeline-item-content">
                         <video width="460" height="422" controls autoplay muted onclick="toggleFullScreen(this)">
                             <source src="images/LLM integration in collision avoidance.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <h4>LLM Enhanced Robot Crowd Navigation</h4>
-                        <p>Developed and integrated an LLM and rule-based collision prediction module on top of the architecture introduced in the "Intention Aware Robot Crowd Navigation with Attention-Based Interaction Graph" paper. This improved the initial policy and previous related works' policies in robot navigation systems.</p>
+                        <p>
+                            Developed and integrated an LLM and rule-based collision prediction module on top of the architecture introduced in the "Intention Aware Robot Crowd Navigation with Attention-Based Interaction Graph" paper. This improved the initial policy and previous related works' policies in robot navigation systems.
+                        </p>
                         <p>Skills used: LLMs, Reinforcement Learning, Motion Planning.</p>
                         <p><a href="https://drive.google.com/file/d/1pjGeOjX2VcfMrK6cKBqhMCe_zkaoNeWH/view?usp=sharing" target="_blank">View Report</a></p>
                     </div>
                 </li>
-                <li class="timeline-item" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                <!-- Depth-Based Object Localization and Manipulation with a Kinova Arm -->
+                <li class="timeline-item" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                     <div class="timeline-item-content">
                         <video width="460" height="422" controls autoplay muted onclick="toggleFullScreen(this)">
                             <source src="images/WhatsApp Video 2024-07-18 at 00.21.40_71323c38.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <h4>Depth-Based Object Localization and Manipulation with a Kinova Arm</h4>
-                        <p>This project integrates vision-based object detection with robotic arm manipulation using ROS and MoveIt. Utilizing a Kinova Gen3 7 DOF robotic arm and Darknet-ROS, it processes images and point clouds to detect objects and compute their 3D coordinates. The robotic arm then moves to the detected objects using planned paths. Calibration of RGB and depth cameras ensures accuracy. Future work includes introducing hand-tracking for enhanced manipulation capabilities.</p>
+                        <p>
+                            This project integrates vision-based object detection with robotic arm manipulation using ROS and MoveIt. Utilizing a Kinova Gen3 7 DOF robotic arm and Darknet-ROS, it processes images and point clouds to detect objects and compute their 3D coordinates. The robotic arm then moves to the detected objects using planned paths. Calibration of RGB and depth cameras ensures accuracy. Future work includes introducing hand-tracking for enhanced manipulation capabilities.
+                        </p>
                         <p>Skills used: Darknet-ROS, ROS, MoveIt, Gazebo, Rviz, Motion Planning, Python.</p>
                         <p><a href="https://medium.com/@sainiheman/from-detection-to-manipulation-a-journey-with-ros-and-kinova-arm-38e4989adc3f" target="_blank">View Report</a></p>
                         <p><a href="https://github.com/Heman15/Object_detection_kinova_gen3" target="_blank">GitHub</a></p>
                     </div>
                 </li>
-                <li class="timeline-item" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                <!-- Kinematics and Dynamics of Kinova Gen3 -->
+                <li class="timeline-item" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                     <div class="timeline-item-content">
                         <img src="images/image.png" alt="Kinematics and Dynamics of Kinova Gen3">
                         <h4>Kinematics and Dynamics of Kinova Gen3</h4>
-                        <p>Developed and implemented forward and inverse kinematics for the Kinova Gen3 Ultralite 7-DOF robotic arm using Denavit-Hartenberg (DH) parameters. The project involved determining end-effector positions through forward kinematics and solving joint angles with iterative numerical methods for inverse kinematics, ensuring accurate and efficient motion planning.</p>
+                        <p>
+                            Developed and implemented forward and inverse kinematics for the Kinova Gen3 Ultralite 7-DOF robotic arm using Denavit-Hartenberg (DH) parameters. The project involved determining end-effector positions through forward kinematics and solving joint angles with iterative numerical methods for inverse kinematics, ensuring accurate and efficient motion planning.
+                        </p>
                         <p>Skills used: ROS, Python, Kinematics & Dynamics.</p>
                         <p><a href="https://medium.com/@sainiheman/understanding-forward-and-inverse-kinematics-for-the-kinova-gen3-ultralite-7-dof-robotic-arm-02cf5ab68037" target="_blank">View Report</a></p>
                         <p><a href="https://github.com/Heman15/Forward-Inverse-Kinematics_kinova" target="_blank">GitHub</a></p>
@@ -216,15 +249,17 @@
         </div>
     </div>
 </div>
+<!-- Footer -->
 <footer class="footer">
     <div class="container text-center">
-        <a class="cc-facebook btn btn-link" href="https://www.linkedin.com/in/heman-saini-5b2309189/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-        <a class="cc-github btn btn-link" href="https://github.com/Heman15"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a class="cc-medium btn btn-link" href="https://medium.com/@sainiheman"><i class="fa fa-medium" aria-hidden="true"></i></a>
-        <a class="cc-instagram btn btn-link" href="https://www.instagram.com/sainiheman.15"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+        <a class="cc-facebook btn btn-link" href="https://www.linkedin.com/in/heman-saini-5b2309189/" aria-label="LinkedIn"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+        <a class="cc-github btn btn-link" href="https://github.com/Heman15" aria-label="GitHub"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <a class="cc-medium btn btn-link" href="https://medium.com/@sainiheman" aria-label="Medium"><i class="fa fa-medium fa-2x" aria-hidden="true"></i></a>
+        <a class="cc-instagram btn btn-link" href="https://www.instagram.com/sainiheman.15" aria-label="Instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
     </div>
     <div class="h4 title text-center">Heman</div>
 </footer>
+<!-- Scripts -->
 <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
 <script src="js/core/popper.min.js?ver=1.1.0"></script>
 <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
