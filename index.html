@@ -1073,7 +1073,7 @@
     </script>
 
     <!-- Chatbot + LocalStorage + Admin Panel Logic -->
-    <script>
+<script>
       (function() {
         // References
         const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
@@ -1084,27 +1084,54 @@
 
         // Toggle the chatbot window
         chatbotToggleBtn.addEventListener('click', () => {
-          if (chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '') {
-            chatbotWindow.style.display = 'block';
-          } else {
-            chatbotWindow.style.display = 'none';
-          }
+          chatbotWindow.style.display = chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '' 
+            ? 'block' : 'none';
         });
 
-        // Append a message to the chat log
-        function appendMessage(sender, message) {
-          const msgDiv = document.createElement('div');
-          msgDiv.style.marginBottom = '8px';
-          msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
-          chatbotMessages.appendChild(msgDiv);
-          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-          // Save chat data
-          saveChatData(sender, message);
+        // Chatbot predefined responses
+        const responses = [
+          "I'm here to assist you!",
+          "Can you provide more details?",
+          "Let me check that for you.",
+          "How can I further assist you?",
+          "That's an interesting question!"
+        ];
+        let lastResponse = ""; // Stores the last chatbot response to prevent repetition
+
+        function getChatbotResponse() {
+          let newResponse;
+          do {
+            newResponse = responses[Math.floor(Math.random() * responses.length)];
+          } while (newResponse === lastResponse); // Ensure it doesn't repeat
+          lastResponse = newResponse;
+          return newResponse;
         }
 
-        // Simple echo response
-        function getChatbotResponse(userMsg) {
-          return "You said: " + userMsg;
+        // Append a message to the chat log
+        function appendMessage(sender, message, isUser = false) {
+          const msgDiv = document.createElement('div');
+          msgDiv.style.marginBottom = '8px';
+          msgDiv.style.padding = '5px';
+          msgDiv.style.borderRadius = '5px';
+          msgDiv.style.wordWrap = "break-word";
+
+          // Different styles for user and chatbot messages
+          if (isUser) {
+            msgDiv.style.background = "#00aaff";
+            msgDiv.style.color = "#fff";
+            msgDiv.style.textAlign = "right";
+          } else {
+            msgDiv.style.background = "#f1f1f1";
+            msgDiv.style.color = "black";
+            msgDiv.style.textAlign = "left";
+          }
+
+          msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+          chatbotMessages.appendChild(msgDiv);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Auto-scroll
+
+          // Save chat data
+          saveChatData(sender, message);
         }
 
         // Save chat data in localStorage
@@ -1118,45 +1145,37 @@
         chatbotSend.addEventListener('click', () => {
           const message = chatbotInput.value.trim();
           if (message !== '') {
-            appendMessage('You', message);
-            setTimeout(() => {
-              // Create a new div for Heman's message with black text
-              const msgDiv = document.createElement('div');
-              msgDiv.style.marginBottom = '8px';
-              msgDiv.style.color = 'black'; // Set text color to black
-              msgDiv.innerHTML = `<strong>Heman:</strong> We are currently reviewing your requirements and will be in touch soon to discuss next steps.`;
-              chatbotMessages.appendChild(msgDiv);
-              chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-              // Optionally, save the chat data
-              saveChatData('Heman', "We are currently reviewing your requirements and will be in touch soon to discuss next steps.");
-            }, 500);
+            appendMessage('You', message, true);
             chatbotInput.value = '';
+
+            // Generate a dynamic chatbot response
+            setTimeout(() => {
+              appendMessage("Heman", getChatbotResponse(), false);
+            }, 500);
           }
         });
 
-
-        // Press Enter to send
+        // Press Enter to send message
         chatbotInput.addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
             chatbotSend.click();
           }
         });
-      })();
-      document.addEventListener("DOMContentLoaded", function() {
-        // Your existing chatbot initialization code...
 
-        // Automatically open the chatbot window after 10 seconds
-        setTimeout(() => {
-          document.getElementById('chatbot-window').style.display = 'block';
-        }, 1000); // 10000 ms = 10 seconds
-      });
+        // Auto-open chatbot after 10 seconds
+        document.addEventListener("DOMContentLoaded", function() {
+          setTimeout(() => {
+            chatbotWindow.style.display = 'block';
+          }, 10000); // 10 seconds delay
+        });
+
+      })();
 
       // Contact Form Submission Data Saving
       (function() {
         const contactForm = document.querySelector('form[action^="https://formspree.io"]');
         if (contactForm) {
           contactForm.addEventListener('submit', function() {
-            // Extract form data
             const formData = new FormData(contactForm);
             const formObj = {};
             formData.forEach((value, key) => {
@@ -1164,7 +1183,7 @@
             });
             formObj.time = new Date().toLocaleString();
 
-            // Save to localStorage
+            // Save form submission data in localStorage
             let submissions = JSON.parse(localStorage.getItem('formSubmissions')) || [];
             submissions.push(formObj);
             localStorage.setItem('formSubmissions', JSON.stringify(submissions));
@@ -1199,7 +1218,7 @@
           adminModal.style.display = 'none';
         });
 
-        // On login click, check password (simple example: "admin123")
+        // On login click, check password (example: "admin123")
         adminLoginBtn.addEventListener('click', () => {
           const pwd = adminPasswordInput.value;
           if (pwd === 'admin123') {
@@ -1208,17 +1227,17 @@
 
             // Display stored form submissions
             const submissions = JSON.parse(localStorage.getItem('formSubmissions')) || [];
-            formDataDisplay.textContent = JSON.stringify(submissions, null, 2);
+            formDataDisplay.textContent = submissions.length > 0 ? JSON.stringify(submissions, null, 2) : "No form submissions found.";
 
             // Display chat log
             const chatLog = JSON.parse(localStorage.getItem('chatLog')) || [];
-            chatDataDisplay.textContent = JSON.stringify(chatLog, null, 2);
+            chatDataDisplay.textContent = chatLog.length > 0 ? JSON.stringify(chatLog, null, 2) : "No chat history available.";
           } else {
             adminError.innerText = 'Incorrect password!';
           }
         });
 
-        // Optionally, click outside the modal to close
+        // Close modal when clicking outside it
         window.addEventListener('click', (e) => {
           if (e.target === adminModal) {
             adminModal.style.display = 'none';
