@@ -859,7 +859,7 @@
           items.forEach((li) => list.appendChild(li.cloneNode(true)));
           function setDuration() {
             const totalHeight = list.scrollHeight;
-            const pps = 30; // pixels per second
+            const pps = 45; // pixels per second
             const duration = Math.max(12, Math.round(totalHeight / pps));
             list.style.animationDuration = duration + "s";
           }
@@ -867,7 +867,7 @@
           window.addEventListener("resize", setDuration);
         }
 
-        let collapsed = false;
+        let collapsed = true;
         toggle.addEventListener("click", () => {
           collapsed = !collapsed;
           if (collapsed) { viewport.style.display = "none"; toggle.textContent = "+"; }
