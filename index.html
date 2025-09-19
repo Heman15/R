@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
@@ -82,7 +82,7 @@
         left: 20px;
         transform: translateY(-50%);
         text-align: left;
-        z-index: 10;  /* Ensure hero content is on top */
+        z-index: 10; /* Ensure hero content is on top */
       }
       .hero-content .cc-profile-image {
         margin-bottom: 20px;
@@ -300,8 +300,96 @@
         text-align: left;
       }
 
+      /* --- Current News Small Window (right side, above chatbot) --- */
+      #news-widget {
+        position: fixed;
+        right: 20px;
+        bottom: 500px; /* sits above the chatbot area (chatbot max ~480px from bottom) */
+        width: 300px;
+        max-height: 260px;
+        z-index: 9998;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(6px);
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+      }
+      #news-header {
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      #news-header .title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      #news-header .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 9999px;
+        background: #00aaff;
+        box-shadow: 0 0 8px #00aaff;
+      }
+      #news-header h6 {
+        margin: 0;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+      }
+      #news-toggle {
+        background: transparent;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #news-viewport {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+      #news-list {
+        list-style: none;
+        padding: 10px 12px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        animation: news-scroll 18s linear infinite;
+      }
+      #news-list li {
+        color: #e9f7ff;
+        font-size: 0.9rem;
+        line-height: 1.25rem;
+      }
+      #news-list li small {
+        display: block;
+        opacity: 0.7;
+        font-size: 0.75rem;
+        margin-top: 4px;
+      }
+      #news-widget:hover #news-list {
+        animation-play-state: paused;
+      }
+      @keyframes news-scroll {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-50%);
+        } /* duplicated by JS for seamless loop */
+      }
+      @media (max-width: 992px) {
+        #news-widget {
+          display: none;
+        }
+      }
+
       /* --- Floating Chat Button + Chat Window --- */
-      /* We'll style them inline below, but you can move styles here if preferred */
+      /* (unchanged from your file; inline styles below for layout) */
     </style>
   </head>
   <body id="top">
@@ -317,7 +405,10 @@
     </div>
 
     <!-- Navbar (Aligned to Right) -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary"
+      color-on-scroll="400"
+    >
       <div class="container-fluid">
         <div class="navbar-translate">
           <!-- Empty brand is hidden -->
@@ -336,7 +427,10 @@
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navigation"
+        >
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link smooth-scroll" href="#about">About</a>
@@ -348,7 +442,9 @@
               <a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#experience">Experience</a>
+              <a class="nav-link smooth-scroll" href="#experience"
+                >Experience</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link smooth-scroll" href="#contact">Contact</a>
@@ -367,20 +463,24 @@
             <img src="images/IMG_1225.jpg" alt="Profile" />
           </a>
         </div>
-        <div class="h2 title" style="margin-bottom: 15px;">Heman</div>
-        <p class="category text-white">Mechanical Engineer | Robotics & Automation</p>
+        <div class="h2 title" style="margin-bottom: 15px">Heman</div>
+        <p class="category text-white">
+          Mechanical Engineer | Robotics & Automation
+        </p>
         <div class="header-buttons">
           <!-- Hero buttons open in new tabs. Ensure the file path is correct. -->
           <a
             class="btn btn-primary mr-2"
             href="https://docs.google.com/presentation/d/1SxKS3ZwxVrQ_uNVON31Ku39tauRNJMFsL58H7qQTr30/edit?usp=sharing"
             target="_blank"
-          >Design Portfolio</a>
+            >Design Portfolio</a
+          >
           <a
             class="btn btn-primary"
             href="images/Heman_Resume_up.pdf"
             target="_blank"
-          >Download CV</a>
+            >Download CV</a
+          >
         </div>
       </div>
       <!-- Social Icons: Bottom Center -->
@@ -426,166 +526,215 @@
 
     <!-- MAIN CONTENT (All sections with translucent backgrounds) -->
     <div class="page-content">
-        <!-- About Section -->
-        <div class="section" id="about">
-          <div class="container">
-            <div class="card" data-aos="fade-up" data-aos-offset="10">
-              <div class="row">
-                <div class="col-lg-6 col-md-12">
-                  <div class="card-body">
-                    <div class="h4 mt-0 title">About</div>
-                    <p>
-                      Hello! I’m Heman, a passionate Robotics & Mechanical Engineer with expertise in robotic automation, motion planning, and high-precision mechanical design.
-                    </p>
-                    <p>
-                      I hold a Master’s in Robotics from UC Riverside and a Bachelor’s in Mechanical Engineering from Maharshi Dayanand University, India. With over three years of experience in mechanical design and electro-mechanical system integration, I specialize in bridging hardware and software to develop intelligent robotic solutions.
-                    </p>
-                    <p>
-                      My expertise spans robotic system integration, AI-driven perception, and CAD-based mechanical design, with hands-on experience in ROS, Python, C++, MATLAB, SolidWorks (CSWA), and PCL. I have worked on projects involving teleoperation, action recognition, and industrial automation, aiming to enhance human-robot collaboration and real-world deployment of robotic systems.
-                    </p>                  
-                  </div>
+      <!-- About Section -->
+      <div class="section" id="about">
+        <div class="container">
+          <div class="card" data-aos="fade-up" data-aos-offset="10">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <div class="card-body">
+                  <div class="h4 mt-0 title">About</div>
+                  <p>
+                    Hello! I’m Heman, a passionate Robotics & Mechanical
+                    Engineer with expertise in robotic automation, motion
+                    planning, and high-precision mechanical design.
+                  </p>
+                  <p>
+                    I hold a Master’s in Robotics from UC Riverside and a
+                    Bachelor’s in Mechanical Engineering from Maharshi Dayanand
+                    University, India. With over three years of experience in
+                    mechanical design and electro-mechanical system integration,
+                    I specialize in bridging hardware and software to develop
+                    intelligent robotic solutions.
+                  </p>
+                  <p>
+                    My expertise spans robotic system integration, AI-driven
+                    perception, and CAD-based mechanical design, with hands-on
+                    experience in ROS, Python, C++, MATLAB, SolidWorks (CSWA),
+                    and PCL. I have worked on projects involving teleoperation,
+                    action recognition, and industrial automation, aiming to
+                    enhance human-robot collaboration and real-world deployment
+                    of robotic systems.
+                  </p>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="card-body">
-                    <div class="h4 mt-0 title">Basic Information</div>
-                    <div class="row mt-3">
-                      <div class="col-sm-4">
-                        <strong class="text-uppercase">Email:</strong>
-                      </div>
-                      <div class="col-sm-8">sainiheman.94@gmail.com</div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div class="card-body">
+                  <div class="h4 mt-0 title">Basic Information</div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4">
+                      <strong class="text-uppercase">Email:</strong>
                     </div>
-                    <div class="row mt-3">
-                      <div class="col-sm-4">
-                        <strong class="text-uppercase">Phone:</strong>
-                      </div>
-                      <div class="col-sm-8">+1 (951)-548-4124</div>
+                    <div class="col-sm-8">sainiheman.94@gmail.com</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4">
+                      <strong class="text-uppercase">Phone:</strong>
                     </div>
-                    <div class="row mt-3">
-                      <div class="col-sm-4">
-                        <strong class="text-uppercase">Language:</strong>
-                      </div>
-                      <div class="col-sm-8">English, Hindi</div>
+                    <div class="col-sm-8">+1 (951)-548-4124</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4">
+                      <strong class="text-uppercase">Language:</strong>
                     </div>
-                    <div class="row mt-3">
-                      <div class="col-sm-4">
-                        <strong class="text-uppercase">Work Authorization:</strong>
-                      </div>
-                      <div class="col-sm-8">Authorized to work in the United States (STEM OPT)</div>
+                    <div class="col-sm-8">English, Hindi</div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-4">
+                      <strong class="text-uppercase"
+                        >Work Authorization:</strong
+                      >
+                    </div>
+                    <div class="col-sm-8">
+                      Authorized to work in the United States (STEM OPT)
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
-        <!-- End About Section -->
-
+        </div>
+      </div>
+      <!-- End About Section -->
 
       <!-- Skills Section -->
       <div class="section" id="skill">
         <div class="container">
           <h4 class="text-center mb-4 title">Software Tools</h4>
           <div class="skills-carousel-wrapper">
-            <button class="arrow-btn left" onclick="scrollCarousel('softwareTools', -250)">&#10094;</button>
+            <button
+              class="arrow-btn left"
+              onclick="scrollCarousel('softwareTools', -250)"
+            >
+              &#10094;
+            </button>
             <div class="skills-carousel" id="softwareTools">
               <div class="skill-card">
-                <img src="images/png-clipart-red-and-white-sw-cube-illustration-solidworks-logo-computer-software-mechanical-engineering-cam-newton-miscellaneous-3d-computer-graphics-thumbnail.png" alt="SolidWorks">
+                <img
+                  src="images/png-clipart-red-and-white-sw-cube-illustration-solidworks-logo-computer-software-mechanical-engineering-cam-newton-miscellaneous-3d-computer-graphics-thumbnail.png"
+                  alt="SolidWorks"
+                />
                 <p>SolidWorks</p>
               </div>
               <div class="skill-card">
-                <img src="images/FPB-RbrXsAIjkjE.jpg" alt="MuJoCo">
+                <img src="images/FPB-RbrXsAIjkjE.jpg" alt="MuJoCo" />
                 <p>MuJoCo</p>
               </div>
               <div class="skill-card">
-                <img src="images/images.png" alt="CATIA">
+                <img src="images/images.png" alt="CATIA" />
                 <p>CATIA</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (1).png" alt="Gazebo">
+                <img src="images/download (1).png" alt="Gazebo" />
                 <p>Gazebo</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (5).jpeg" alt="Star-CMM">
+                <img src="images/download (5).jpeg" alt="Star-CMM" />
                 <p>Star-CMM</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (12).png" alt="Ansys">
+                <img src="images/download (12).png" alt="Ansys" />
                 <p>Ansys</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (1).jpeg" alt="RVIZ">
+                <img src="images/download (1).jpeg" alt="RVIZ" />
                 <p>RVIZ</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (2).png" alt="MoveIt">
+                <img src="images/download (2).png" alt="MoveIt" />
                 <p>MoveIt</p>
               </div>
             </div>
-            <button class="arrow-btn right" onclick="scrollCarousel('softwareTools', 250)">&#10095;</button>
+            <button
+              class="arrow-btn right"
+              onclick="scrollCarousel('softwareTools', 250)"
+            >
+              &#10095;
+            </button>
           </div>
 
           <h4 class="text-center mb-4 title">Programming & Software Tools</h4>
           <div class="skills-carousel-wrapper">
-            <button class="arrow-btn left" onclick="scrollCarousel('programmingTools', -250)">&#10094;</button>
+            <button
+              class="arrow-btn left"
+              onclick="scrollCarousel('programmingTools', -250)"
+            >
+              &#10094;
+            </button>
             <div class="skills-carousel" id="programmingTools">
               <div class="skill-card">
-                <img src="images/download (2).jpeg" alt="Python">
+                <img src="images/download (2).jpeg" alt="Python" />
                 <p>Python</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (3).png" alt="C++">
+                <img src="images/download (3).png" alt="C++" />
                 <p>C++</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (4).png" alt="ROS">
+                <img src="images/download (4).png" alt="ROS" />
                 <p>ROS / ROS2</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (5).png" alt="Git">
+                <img src="images/download (5).png" alt="Git" />
                 <p>Git</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (6).png" alt="AWS">
+                <img src="images/download (6).png" alt="AWS" />
                 <p>AWS</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (3).jpeg" alt="Linux">
+                <img src="images/download (3).jpeg" alt="Linux" />
                 <p>Linux</p>
               </div>
             </div>
-            <button class="arrow-btn right" onclick="scrollCarousel('programmingTools', 250)">&#10095;</button>
+            <button
+              class="arrow-btn right"
+              onclick="scrollCarousel('programmingTools', 250)"
+            >
+              &#10095;
+            </button>
           </div>
 
           <h4 class="text-center mb-4 title">Technical Skills</h4>
           <div class="skills-carousel-wrapper">
-            <button class="arrow-btn left" onclick="scrollCarousel('technicalSkills', -250)">&#10094;</button>
+            <button
+              class="arrow-btn left"
+              onclick="scrollCarousel('technicalSkills', -250)"
+            >
+              &#10094;
+            </button>
             <div class="skills-carousel" id="technicalSkills">
               <div class="skill-card">
-                <img src="images/download (8).png" alt="PLM">
+                <img src="images/download (8).png" alt="PLM" />
                 <p>PLM</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (10).png" alt="Rapid Prototyping">
+                <img src="images/download (10).png" alt="Rapid Prototyping" />
                 <p>Rapid Prototyping</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (11).png" alt="Manufacturing">
+                <img src="images/download (11).png" alt="Manufacturing" />
                 <p>Manufacturing</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (7).png" alt="DFMA">
+                <img src="images/download (7).png" alt="DFMA" />
                 <p>DFMA / DFME</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (9).png" alt="3D Printing">
+                <img src="images/download (9).png" alt="3D Printing" />
                 <p>3D Printing</p>
               </div>
               <div class="skill-card">
-                <img src="images/download (4).jpeg" alt="GD&T">
+                <img src="images/download (4).jpeg" alt="GD&T" />
                 <p>GD&T</p>
               </div>
             </div>
-            <button class="arrow-btn right" onclick="scrollCarousel('technicalSkills', 250)">&#10095;</button>
+            <button
+              class="arrow-btn right"
+              onclick="scrollCarousel('technicalSkills', 250)"
+            >
+              &#10095;
+            </button>
           </div>
         </div>
       </div>
@@ -600,9 +749,18 @@
             </div>
           </div>
           <div class="portfolio-carousel-wrapper">
-            <button class="arrow-btn left" onclick="scrollCarousel('portfolioCarousel', -300)">&#10094;</button>
+            <button
+              class="arrow-btn left"
+              onclick="scrollCarousel('portfolioCarousel', -300)"
+            >
+              &#10094;
+            </button>
             <div class="portfolio-carousel" id="portfolioCarousel">
-              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <div
+                class="portfolio-card"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+              >
                 <a href="detailMain.html">
                   <figure class="cc-effect">
                     <img src="images/untitled.5.jpg" alt="CAD Design" />
@@ -613,11 +771,18 @@
                   </figure>
                 </a>
               </div>
-              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <div
+                class="portfolio-card"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+              >
                 <a href="detailMain2.html">
                   <figure class="cc-effect">
                     <video controls autoplay muted>
-                      <source src="images/Langchain Project.mp4" type="video/mp4" />
+                      <source
+                        src="images/Langchain Project.mp4"
+                        type="video/mp4"
+                      />
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
@@ -627,7 +792,11 @@
                   </figure>
                 </a>
               </div>
-              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <div
+                class="portfolio-card"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+              >
                 <a href="detailMain3.html">
                   <figure class="cc-effect">
                     <video controls autoplay muted>
@@ -641,10 +810,17 @@
                   </figure>
                 </a>
               </div>
-              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <div
+                class="portfolio-card"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+              >
                 <a href="detailMain4.html">
                   <figure class="cc-effect">
-                    <img src="images/20211016_164140.jpg" alt="Other Portfolio" />
+                    <img
+                      src="images/20211016_164140.jpg"
+                      alt="Other Portfolio"
+                    />
                     <figcaption>
                       <div class="h4">Other</div>
                       <p>Click Here</p>
@@ -653,7 +829,12 @@
                 </a>
               </div>
             </div>
-            <button class="arrow-btn right" onclick="scrollCarousel('portfolioCarousel', 300)">&#10095;</button>
+            <button
+              class="arrow-btn right"
+              onclick="scrollCarousel('portfolioCarousel', 300)"
+            >
+              &#10095;
+            </button>
           </div>
         </div>
       </div>
@@ -665,43 +846,79 @@
           <div class="h4 text-center mb-4 title">Work Experience</div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-experience-header">
                   <p>June 2025 - August 2025</p>
                   <div class="h5">University of California, Los Angeles</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="60" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="60"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Robotic Instructor</b></u></div>
+                  <div class="h5">
+                    <u><b>Robotic Instructor</b></u>
+                  </div>
                   <p>
-                    Design and delivered two 3-week robotics courses (CAD, sensor integration, Python) and guide student
-teams through robot prototyping (mechanical assembly, integration, coding).
-                  <p>
+                    Design and delivered two 3-week robotics courses (CAD,
+                    sensor integration, Python) and guide student teams through
+                    robot prototyping (mechanical assembly, integration,
+                    coding).
+                  </p>
+
+                  <p></p>
                 </div>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-experience-header">
                   <p>June 2024 - August 2024</p>
                   <div class="h5">OrangeWood Labs (YC-18)</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="60" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="60"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Robotic Engineer Intern</b></u></div>
+                  <div class="h5">
+                    <u><b>Robotic Engineer Intern</b></u>
+                  </div>
                   <p>
-                    Utilized PCL for advanced 3D point cloud processing and integrated MoveIt! for efficient motion planning and trajectory optimization, enabling precise environment mapping and improved robotic system performance.
+                    Utilized PCL for advanced 3D point cloud processing and
+                    integrated MoveIt! for efficient motion planning and
+                    trajectory optimization, enabling precise environment
+                    mapping and improved robotic system performance.
                   </p>
                   <p>
-                    Developed C++ automation scripts for the ROS-based AutoSpray Robot, enhancing on-the-go navigation and motion planning capabilities.
+                    Developed C++ automation scripts for the ROS-based AutoSpray
+                    Robot, enhancing on-the-go navigation and motion planning
+                    capabilities.
                   </p>
                   <p>
-                    Designed and manufacture a robotic arm enclosure, collaborated with electrical and electronics teams to
-make a manufacturing-ready product with sensor mounts, and wiring integration. Applied DFM/DFA and GD&T, reduced 15% machining cost.
+                    Designed and manufacture a robotic arm enclosure,
+                    collaborated with electrical and electronics teams to make a
+                    manufacturing-ready product with sensor mounts, and wiring
+                    integration. Applied DFM/DFA and GD&T, reduced 15% machining
+                    cost.
                   </p>
                 </div>
               </div>
@@ -709,23 +926,41 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-experience-header">
                   <p>December 2022 - September 2023</p>
                   <div class="h5">E-fill Electric Vehicle Pvt. Ltd.</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Design Engineer</b></u></div>
+                  <div class="h5">
+                    <u><b>Design Engineer</b></u>
+                  </div>
                   <p>
-                    Led the design and development of a three-wheeler electric vehicle, ensuring compliance with ISO 9001/14001 standards using SolidWorks and CATIA for 3D modeling.
+                    Led the design and development of a three-wheeler electric
+                    vehicle, ensuring compliance with ISO 9001/14001 standards
+                    using SolidWorks and CATIA for 3D modeling.
                   </p>
                   <p>
-                    Managed SAP ERP for BOM to streamline procurement and ensure accurate documentation, improving inventory control and procurement efficiency.
+                    Managed SAP ERP for BOM to streamline procurement and ensure
+                    accurate documentation, improving inventory control and
+                    procurement efficiency.
                   </p>
                   <p>
-                    Conducted FEA using ANSYS for structural integrity and cost-effective material selection in new product development, optimizing safety and performance.
+                    Conducted FEA using ANSYS for structural integrity and
+                    cost-effective material selection in new product
+                    development, optimizing safety and performance.
                   </p>
                 </div>
               </div>
@@ -733,17 +968,32 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-experience-header">
                   <p>April 2022 - November 2022</p>
                   <div class="h5">Mood Advanced Systems Pvt. Ltd.</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Mechanical Engineer</b></u></div>
+                  <div class="h5">
+                    <u><b>Mechanical Engineer</b></u>
+                  </div>
                   <p>
-                    Designed components for armored vehicles, steering assemblies, and military weapons, ensuring compliance with rigorous specifications. Created detailed production drawings using AutoCAD and SolidWorks.
+                    Designed components for armored vehicles, steering
+                    assemblies, and military weapons, ensuring compliance with
+                    rigorous specifications. Created detailed production
+                    drawings using AutoCAD and SolidWorks.
                   </p>
                 </div>
               </div>
@@ -751,23 +1001,43 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-experience-header">
                   <p>June 2021 - November 2021</p>
                   <div class="h5">Greenvolt Mobility LLP</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Mechanical Engineer</b></u></div>
+                  <div class="h5">
+                    <u><b>Mechanical Engineer</b></u>
+                  </div>
                   <p>
-                    Designed track recording testing machines and devices to enhance and optimize vehicle performance, including a replica data collection device for creating an autonomous kit for Indian roads.
+                    Designed track recording testing machines and devices to
+                    enhance and optimize vehicle performance, including a
+                    replica data collection device for creating an autonomous
+                    kit for Indian roads.
                   </p>
                   <p>
-                    Developed data acquisition systems for DC motors and electric vehicle battery systems, enabling precise measurements of motor, controller, and battery pack performance.
+                    Developed data acquisition systems for DC motors and
+                    electric vehicle battery systems, enabling precise
+                    measurements of motor, controller, and battery pack
+                    performance.
                   </p>
                   <p>
-                    Optimized the ergonomics of electric two-wheelers, demonstrating a holistic approach to vehicle innovation and user experience.
+                    Optimized the ergonomics of electric two-wheelers,
+                    demonstrating a holistic approach to vehicle innovation and
+                    user experience.
                   </p>
                 </div>
               </div>
@@ -775,17 +1045,33 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-experience-header">
                   <p>June 2019 - July 2019</p>
                   <div class="h5">Honda Two-Wheeler Pvt. Ltd.</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Intern</b></u></div>
+                  <div class="h5">
+                    <u><b>Intern</b></u>
+                  </div>
                   <p>
-                    Inspected wiring harnesses in Honda Shine (125cc), Honda CBR150, and Hornet models, ensuring top-notch quality and performance. Contributed to the manual assembly inspection of the African Twin and the engine assembly inspection of Activa and Honda Shine (125cc), ensuring flawless operation.
+                    Inspected wiring harnesses in Honda Shine (125cc), Honda
+                    CBR150, and Hornet models, ensuring top-notch quality and
+                    performance. Contributed to the manual assembly inspection
+                    of the African Twin and the engine assembly inspection of
+                    Activa and Honda Shine (125cc), ensuring flawless operation.
                   </p>
                 </div>
               </div>
@@ -801,18 +1087,39 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           <div class="h4 text-center mb-4 title">Education</div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-education-header">
                   <p>2023 - 2025</p>
                   <div class="h5">Master's Degree</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Master in Robotics</b></u></div>
+                  <div class="h5">
+                    <u><b>Master in Robotics</b></u>
+                  </div>
                   <p class="category">University of California, Riverside</p>
                   <p>
-                    I hold a Master’s degree in Robotics, Automation, and Mechatronics, specializing in Computer Science. This advanced program enables me to immerse myself in the sophisticated realms of robotics and automation, enhancing my proficiency in state-of-the-art technologies and their practical applications. Through a comprehensive blend of theoretical knowledge and hands-on experience, I am building a robust foundation in robotics, equipping myself to address and overcome complex challenges in the fields of automation and mechatronics.
+                    I hold a Master’s degree in Robotics, Automation, and
+                    Mechatronics, specializing in Computer Science. This
+                    advanced program enables me to immerse myself in the
+                    sophisticated realms of robotics and automation, enhancing
+                    my proficiency in state-of-the-art technologies and their
+                    practical applications. Through a comprehensive blend of
+                    theoretical knowledge and hands-on experience, I am building
+                    a robust foundation in robotics, equipping myself to address
+                    and overcome complex challenges in the fields of automation
+                    and mechatronics.
                   </p>
                 </div>
               </div>
@@ -820,18 +1127,36 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-education-header">
                   <p>2017 - 2021</p>
                   <div class="h5">Bachelor's Degree</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Bachelor of Mechanical Engineering</b></u></div>
+                  <div class="h5">
+                    <u><b>Bachelor of Mechanical Engineering</b></u>
+                  </div>
                   <p class="category">Maharshi Dayanand University</p>
                   <p>
-                    I completed a Bachelor of Technology in Mechanical Engineering, graduating in July 2021. This degree equipped me with a strong understanding of mechanical engineering principles and their real-world applications. Throughout my academic journey, I gained valuable insights into various facets of mechanical engineering, preparing me to tackle challenges and contribute meaningfully to the field.
+                    I completed a Bachelor of Technology in Mechanical
+                    Engineering, graduating in July 2021. This degree equipped
+                    me with a strong understanding of mechanical engineering
+                    principles and their real-world applications. Throughout my
+                    academic journey, I gained valuable insights into various
+                    facets of mechanical engineering, preparing me to tackle
+                    challenges and contribute meaningfully to the field.
                   </p>
                 </div>
               </div>
@@ -839,18 +1164,32 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           </div>
           <div class="card">
             <div class="row">
-              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-3 bg-primary"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body cc-education-header">
                   <p>2015 - 2016</p>
                   <div class="h5">High School</div>
                 </div>
               </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div
+                class="col-md-9"
+                data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-duration="500"
+              >
                 <div class="card-body">
-                  <div class="h5"><u><b>Science and Mathematics</b></u></div>
+                  <div class="h5">
+                    <u><b>Science and Mathematics</b></u>
+                  </div>
                   <p class="category">School of Secondary Board</p>
                   <p>
-                    I completed my high school education in July 2016. This foundational education provided me with a strong academic footing and laid the groundwork for my future pursuits.
+                    I completed my high school education in July 2016. This
+                    foundational education provided me with a strong academic
+                    footing and laid the groundwork for my future pursuits.
                   </p>
                 </div>
               </div>
@@ -862,7 +1201,10 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
 
       <!-- Contact Section -->
       <div class="section contact-info" id="contact">
-        <div class="cc-contact-information" style="background-image: url('images/staticmap.png')">
+        <div
+          class="cc-contact-information"
+          style="background-image: url(&quot;images/staticmap.png&quot;)"
+        >
           <div class="container">
             <div class="cc-contact">
               <div class="row">
@@ -873,15 +1215,26 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
                       <div class="col-md-6">
                         <div class="card-body">
                           <!-- Contact form action uses Formspree; can be changed as needed -->
-                          <form action="https://formspree.io/your@email.com" method="POST">
-                            <div class="p pb-3"><strong>Feel free to contact me</strong></div>
+                          <form
+                            action="https://formspree.io/your@email.com"
+                            method="POST"
+                          >
+                            <div class="p pb-3">
+                              <strong>Feel free to contact me</strong>
+                            </div>
                             <div class="row mb-3">
                               <div class="col">
                                 <div class="input-group">
                                   <span class="input-group-addon">
                                     <i class="fa fa-user-circle"></i>
                                   </span>
-                                  <input class="form-control" type="text" name="name" placeholder="Name" required />
+                                  <input
+                                    class="form-control"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    required
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -891,7 +1244,13 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
                                   <span class="input-group-addon">
                                     <i class="fa fa-file-text"></i>
                                   </span>
-                                  <input class="form-control" type="text" name="Subject" placeholder="Subject" required />
+                                  <input
+                                    class="form-control"
+                                    type="text"
+                                    name="Subject"
+                                    placeholder="Subject"
+                                    required
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -901,20 +1260,33 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
                                   <span class="input-group-addon">
                                     <i class="fa fa-envelope"></i>
                                   </span>
-                                  <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required />
+                                  <input
+                                    class="form-control"
+                                    type="email"
+                                    name="_replyto"
+                                    placeholder="E-mail"
+                                    required
+                                  />
                                 </div>
                               </div>
                             </div>
                             <div class="row mb-3">
                               <div class="col">
                                 <div class="form-group">
-                                  <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
+                                  <textarea
+                                    class="form-control"
+                                    name="message"
+                                    placeholder="Your Message"
+                                    required
+                                  ></textarea>
                                 </div>
                               </div>
                             </div>
                             <div class="row">
                               <div class="col">
-                                <button class="btn btn-primary" type="submit">Send</button>
+                                <button class="btn btn-primary" type="submit">
+                                  Send
+                                </button>
                               </div>
                             </div>
                           </form>
@@ -945,7 +1317,10 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
     <!-- Footer -->
     <footer class="footer">
       <div class="container text-center">
-        <a class="cc-facebook btn btn-link" href="https://www.linkedin.com/in/heman-saini-5b2309189/">
+        <a
+          class="cc-facebook btn btn-link"
+          href="https://www.linkedin.com/in/heman-saini-5b2309189/"
+        >
           <i class="fa fa-linkedin-square" aria-hidden="true"></i>
         </a>
         <a class="cc-github btn btn-link" href="https://github.com/Heman15">
@@ -954,15 +1329,60 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
         <a class="cc-medium btn btn-link" href="https://medium.com/@sainiheman">
           <i class="fa fa-medium" aria-hidden="true"></i>
         </a>
-        <a class="cc-instagram btn btn-link" href="https://www.instagram.com/sainiheman.15">
+        <a
+          class="cc-instagram btn btn-link"
+          href="https://www.instagram.com/sainiheman.15"
+        >
           <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
         </a>
       </div>
       <div class="h4 title text-center">Heman</div>
     </footer>
 
+    <!-- >>> Current News Small Window (above chatbot) <<< -->
+    <aside id="news-widget" aria-label="Current News">
+      <div id="news-header">
+        <div class="title-wrap">
+          <span class="dot" aria-hidden="true"></span>
+          <h6>Current News</h6>
+        </div>
+        <button
+          id="news-toggle"
+          title="Collapse/Expand"
+          aria-label="Collapse or expand"
+        >
+          –
+        </button>
+      </div>
+      <div id="news-viewport">
+        <ul id="news-list">
+          <!-- Edit these items freely -->
+          <li>
+            Presented ROS motion planning demo using MoveIt at IEEE student
+            chapter.
+            <small>Sep 10, 2025</small>
+          </li>
+          <li>
+            Published Medium post: “Point Clouds with PCL: From Scan to Plan”.
+            <small>Aug 28, 2025</small>
+          </li>
+          <li>
+            Wrapped up UCLA summer robotics courses (CAD + sensor integration).
+            <small>Aug 15, 2025</small>
+          </li>
+          <li>
+            Added teleop + action recognition demo to portfolio.
+            <small>Jul 30, 2025</small>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
     <!-- Floating Chat Button + Chat Window -->
-    <div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <div
+      id="chatbot-container"
+      style="position: fixed; bottom: 20px; right: 20px; z-index: 9999"
+    >
       <!-- Floating Button -->
       <button
         id="chatbot-toggle-btn"
@@ -974,7 +1394,7 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           height: 60px;
           color: #fff;
           cursor: pointer;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
           font-size: 24px;
           outline: none;
         "
@@ -998,10 +1418,19 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
         "
       >
         <!-- Chat Messages Area -->
-        <div id="chatbot-messages" style="font-size: 0.9rem; padding: 10px; height: 300px; overflow-y: auto;">
-          <div style="margin-bottom:8px; color: black;"><strong>Heman:</strong> How can I help you?</div>
+        <div
+          id="chatbot-messages"
+          style="
+            font-size: 0.9rem;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+          "
+        >
+          <div style="margin-bottom: 8px; color: black">
+            <strong>Heman:</strong> How can I help you?
+          </div>
         </div>
-        
 
         <!-- Chatbot Input Area -->
         <div
@@ -1042,26 +1471,105 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
     </div>
 
     <!-- Admin Panel Trigger Button -->
-    <button id="admin-panel-btn" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; padding: 10px 15px; background: #00aaff; border: none; border-radius: 5px; color: #fff; cursor: pointer;">
+    <button
+      id="admin-panel-btn"
+      style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+        padding: 10px 15px;
+        background: #00aaff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      "
+    >
       Ad
     </button>
 
     <!-- Admin Login & Data Modal -->
-    <div id="admin-modal" style="display: none; position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000;">
-      <div style="position: relative; width: 90%; max-width: 600px; margin: 50px auto; background: #fff; color: #333; border-radius: 10px; padding: 20px;">
-        <span id="admin-close" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem;">&times;</span>
-        <div id="admin-login" style="display: block;">
+    <div
+      id="admin-modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+      "
+    >
+      <div
+        style="
+          position: relative;
+          width: 90%;
+          max-width: 600px;
+          margin: 50px auto;
+          background: #fff;
+          color: #333;
+          border-radius: 10px;
+          padding: 20px;
+        "
+      >
+        <span
+          id="admin-close"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.5rem;
+          "
+          >&times;</span
+        >
+        <div id="admin-login" style="display: block">
           <h3>Admin Login</h3>
-          <input type="password" id="admin-password" placeholder="Enter password" style="width: 100%; padding: 10px; margin-bottom: 15px;" />
-          <button id="admin-login-btn" style="padding: 10px 15px; background: #00aaff; border: none; color: #fff; cursor: pointer;">Login</button>
-          <div id="admin-error" style="color: red; margin-top: 10px;"></div>
+          <input
+            type="password"
+            id="admin-password"
+            placeholder="Enter password"
+            style="width: 100%; padding: 10px; margin-bottom: 15px"
+          />
+          <button
+            id="admin-login-btn"
+            style="
+              padding: 10px 15px;
+              background: #00aaff;
+              border: none;
+              color: #fff;
+              cursor: pointer;
+            "
+          >
+            Login
+          </button>
+          <div id="admin-error" style="color: red; margin-top: 10px"></div>
         </div>
-        <div id="admin-data" style="display: none;">
+        <div id="admin-data" style="display: none">
           <h3>Submissions & Chat Log</h3>
           <h4>Contact Form Submissions</h4>
-          <pre id="form-data" style="background: #f5f5f5; padding: 10px; max-height: 150px; overflow-y: auto;"></pre>
+          <pre
+            id="form-data"
+            style="
+              background: #f5f5f5;
+              padding: 10px;
+              max-height: 150px;
+              overflow-y: auto;
+            "
+          ></pre>
           <h4>Chatbot Conversation</h4>
-          <pre id="chat-data" style="background: #f5f5f5; padding: 10px; max-height: 150px; overflow-y: auto;"></pre>
+          <pre
+            id="chat-data"
+            style="
+              background: #f5f5f5;
+              padding: 10px;
+              max-height: 150px;
+              overflow-y: auto;
+            "
+          ></pre>
         </div>
       </div>
     </div>
@@ -1095,20 +1603,62 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
       }
     </script>
 
+    <!-- Current News widget logic -->
+    <script>
+      (function () {
+        const news = document.getElementById("news-widget");
+        const list = document.getElementById("news-list");
+        const toggle = document.getElementById("news-toggle");
+        const viewport = document.getElementById("news-viewport");
+
+        if (list) {
+          // Duplicate items for seamless loop
+          const items = Array.from(list.children);
+          items.forEach((li) => list.appendChild(li.cloneNode(true)));
+
+          // Adjust animation duration by content height for smooth speed
+          function setDuration() {
+            const totalHeight = list.scrollHeight;
+            const pps = 30; // pixels per second
+            const duration = Math.max(12, Math.round(totalHeight / pps));
+            list.style.animationDuration = duration + "s";
+          }
+          setDuration();
+          window.addEventListener("resize", setDuration);
+        }
+
+        // Collapse / Expand
+        let collapsed = false;
+        toggle.addEventListener("click", () => {
+          collapsed = !collapsed;
+          if (collapsed) {
+            viewport.style.display = "none";
+            toggle.textContent = "+";
+          } else {
+            viewport.style.display = "block";
+            toggle.textContent = "–";
+          }
+        });
+      })();
+    </script>
+
     <!-- Chatbot + LocalStorage + Admin Panel Logic -->
-<script>
-      (function() {
+    <script>
+      (function () {
         // References
-        const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
-        const chatbotWindow = document.getElementById('chatbot-window');
-        const chatbotInput = document.getElementById('chatbot-input');
-        const chatbotSend = document.getElementById('chatbot-send');
-        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotToggleBtn = document.getElementById("chatbot-toggle-btn");
+        const chatbotWindow = document.getElementById("chatbot-window");
+        const chatbotInput = document.getElementById("chatbot-input");
+        const chatbotSend = document.getElementById("chatbot-send");
+        const chatbotMessages = document.getElementById("chatbot-messages");
 
         // Toggle the chatbot window
-        chatbotToggleBtn.addEventListener('click', () => {
-          chatbotWindow.style.display = chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '' 
-            ? 'block' : 'none';
+        chatbotToggleBtn.addEventListener("click", () => {
+          chatbotWindow.style.display =
+            chatbotWindow.style.display === "none" ||
+            chatbotWindow.style.display === ""
+              ? "block"
+              : "none";
         });
 
         // Chatbot predefined responses
@@ -1117,14 +1667,15 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
           "Can you provide more details?",
           "Let me check that for you.",
           "How can I further assist you?",
-          "That's an interesting question!"
+          "That's an interesting question!",
         ];
         let lastResponse = ""; // Stores the last chatbot response to prevent repetition
 
         function getChatbotResponse() {
           let newResponse;
           do {
-            newResponse = responses[Math.floor(Math.random() * responses.length)];
+            newResponse =
+              responses[Math.floor(Math.random() * responses.length)];
           } while (newResponse === lastResponse); // Ensure it doesn't repeat
           lastResponse = newResponse;
           return newResponse;
@@ -1132,10 +1683,10 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
 
         // Append a message to the chat log
         function appendMessage(sender, message, isUser = false) {
-          const msgDiv = document.createElement('div');
-          msgDiv.style.marginBottom = '8px';
-          msgDiv.style.padding = '5px';
-          msgDiv.style.borderRadius = '5px';
+          const msgDiv = document.createElement("div");
+          msgDiv.style.marginBottom = "8px";
+          msgDiv.style.padding = "5px";
+          msgDiv.style.borderRadius = "5px";
           msgDiv.style.wordWrap = "break-word";
 
           // Different styles for user and chatbot messages
@@ -1159,17 +1710,17 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
 
         // Save chat data in localStorage
         function saveChatData(sender, message) {
-          let chatLog = JSON.parse(localStorage.getItem('chatLog')) || [];
+          let chatLog = JSON.parse(localStorage.getItem("chatLog")) || [];
           chatLog.push({ sender, message, time: new Date().toLocaleString() });
-          localStorage.setItem('chatLog', JSON.stringify(chatLog));
+          localStorage.setItem("chatLog", JSON.stringify(chatLog));
         }
 
         // Send message
-        chatbotSend.addEventListener('click', () => {
+        chatbotSend.addEventListener("click", () => {
           const message = chatbotInput.value.trim();
-          if (message !== '') {
-            appendMessage('You', message, true);
-            chatbotInput.value = '';
+          if (message !== "") {
+            appendMessage("You", message, true);
+            chatbotInput.value = "";
 
             // Generate a dynamic chatbot response
             setTimeout(() => {
@@ -1179,26 +1730,27 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
         });
 
         // Press Enter to send message
-        chatbotInput.addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
+        chatbotInput.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
             chatbotSend.click();
           }
         });
 
         // Auto-open chatbot after 10 seconds
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
           setTimeout(() => {
-            chatbotWindow.style.display = 'block';
+            chatbotWindow.style.display = "block";
           }, 10000); // 10 seconds delay
         });
-
       })();
 
       // Contact Form Submission Data Saving
-      (function() {
-        const contactForm = document.querySelector('form[action^="https://formspree.io"]');
+      (function () {
+        const contactForm = document.querySelector(
+          'form[action^="https://formspree.io"]',
+        );
         if (contactForm) {
-          contactForm.addEventListener('submit', function() {
+          contactForm.addEventListener("submit", function () {
             const formData = new FormData(contactForm);
             const formObj = {};
             formData.forEach((value, key) => {
@@ -1207,63 +1759,74 @@ make a manufacturing-ready product with sensor mounts, and wiring integration. A
             formObj.time = new Date().toLocaleString();
 
             // Save form submission data in localStorage
-            let submissions = JSON.parse(localStorage.getItem('formSubmissions')) || [];
+            let submissions =
+              JSON.parse(localStorage.getItem("formSubmissions")) || [];
             submissions.push(formObj);
-            localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+            localStorage.setItem(
+              "formSubmissions",
+              JSON.stringify(submissions),
+            );
           });
         }
       })();
 
       // Admin Panel Functionality
-      (function() {
-        const adminBtn = document.getElementById('admin-panel-btn');
-        const adminModal = document.getElementById('admin-modal');
-        const adminClose = document.getElementById('admin-close');
-        const adminLogin = document.getElementById('admin-login');
-        const adminData = document.getElementById('admin-data');
-        const adminLoginBtn = document.getElementById('admin-login-btn');
-        const adminPasswordInput = document.getElementById('admin-password');
-        const adminError = document.getElementById('admin-error');
-        const formDataDisplay = document.getElementById('form-data');
-        const chatDataDisplay = document.getElementById('chat-data');
+      (function () {
+        const adminBtn = document.getElementById("admin-panel-btn");
+        const adminModal = document.getElementById("admin-modal");
+        const adminClose = document.getElementById("admin-close");
+        const adminLogin = document.getElementById("admin-login");
+        const adminData = document.getElementById("admin-data");
+        const adminLoginBtn = document.getElementById("admin-login-btn");
+        const adminPasswordInput = document.getElementById("admin-password");
+        const adminError = document.getElementById("admin-error");
+        const formDataDisplay = document.getElementById("form-data");
+        const chatDataDisplay = document.getElementById("chat-data");
 
         // Show modal on admin button click
-        adminBtn.addEventListener('click', () => {
-          adminModal.style.display = 'block';
-          adminLogin.style.display = 'block';
-          adminData.style.display = 'none';
-          adminPasswordInput.value = '';
-          adminError.innerText = '';
+        adminBtn.addEventListener("click", () => {
+          adminModal.style.display = "block";
+          adminLogin.style.display = "block";
+          adminData.style.display = "none";
+          adminPasswordInput.value = "";
+          adminError.innerText = "";
         });
 
         // Close modal
-        adminClose.addEventListener('click', () => {
-          adminModal.style.display = 'none';
+        adminClose.addEventListener("click", () => {
+          adminModal.style.display = "none";
         });
 
         // On login click, check password (example: "admin123")
-        adminLoginBtn.addEventListener('click', () => {
+        adminLoginBtn.addEventListener("click", () => {
           const pwd = adminPasswordInput.value;
-          if (pwd === 'admin123') {
-            adminLogin.style.display = 'none';
-            adminData.style.display = 'block';
+          if (pwd === "admin123") {
+            adminLogin.style.display = "none";
+            adminData.style.display = "block";
 
             // Display stored form submissions
-            const submissions = JSON.parse(localStorage.getItem('formSubmissions')) || [];
-            formDataDisplay.textContent = submissions.length > 0 ? JSON.stringify(submissions, null, 2) : "No form submissions found.";
+            const submissions =
+              JSON.parse(localStorage.getItem("formSubmissions")) || [];
+            formDataDisplay.textContent =
+              submissions.length > 0
+                ? JSON.stringify(submissions, null, 2)
+                : "No form submissions found.";
 
             // Display chat log
-            const chatLog = JSON.parse(localStorage.getItem('chatLog')) || [];
-            chatDataDisplay.textContent = chatLog.length > 0 ? JSON.stringify(chatLog, null, 2) : "No chat history available.";
+            const chatLog = JSON.parse(localStorage.getItem("chatLog")) || [];
+            chatDataDisplay.textContent =
+              chatLog.length > 0
+                ? JSON.stringify(chatLog, null, 2)
+                : "No chat history available.";
           } else {
-            adminError.innerText = 'Incorrect password!';
+            adminError.innerText = "Incorrect password!";
           }
         });
 
         // Close modal when clicking outside it
-        window.addEventListener('click', (e) => {
+        window.addEventListener("click", (e) => {
           if (e.target === adminModal) {
-            adminModal.style.display = 'none';
+            adminModal.style.display = "none";
           }
         });
       })();
