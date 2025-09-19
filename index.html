@@ -7,14 +7,8 @@
     <title>Creative CV - Full Video Background</title>
 
     <!-- Fonts and Icons -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
-      rel="stylesheet"
-    />
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"/>
 
     <!-- CSS Files (Bootstrap, AOS, etc.) -->
     <link href="css/aos.css?ver=1.1.0" rel="stylesheet" />
@@ -31,424 +25,201 @@
       /* Fixed video background for all sections */
       .video-background {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: -1; overflow: hidden;
       }
       .video-background video {
-        width: 100%;
-        height: 100%;
+        width: 100%; height: 100%;
         object-fit: cover;
       }
       /* Translucent backgrounds for navbar, hero, sections, and footer */
-      .navbar,
-      .page-header,
-      .section,
-      .footer {
-        background: rgba(0, 0, 0, 0.7);
-      }
+      .navbar, .page-header, .section, .footer { background: rgba(0, 0, 0, 0.7); }
+
       /* Navbar styling */
-      .navbar {
-        transition: background 0.5s ease;
-      }
-      .navbar.scrolled {
-        background: rgba(0, 0, 0, 0.9);
-      }
+      .navbar { transition: background 0.5s ease; }
+      .navbar.scrolled { background: rgba(0, 0, 0, 0.9); }
       .navbar .container-fluid {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        display: flex; justify-content: flex-end; align-items: center;
       }
-      .navbar .navbar-brand {
-        display: none;
-      }
-      .navbar-nav .nav-link {
-        color: #fff !important;
-      }
+      .navbar .navbar-brand { display: none; }
+      .navbar-nav .nav-link { color: #fff !important; }
+
       /* Fullscreen Hero Section */
-      .page-header {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
+      .page-header { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+
       /* Hero content positioned absolutely at left-center */
       .hero-content {
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
-        text-align: left;
-        z-index: 10; /* Ensure hero content is on top */
+        position: absolute; top: 50%; left: 20px; transform: translateY(-50%);
+        text-align: left; z-index: 10;
       }
-      .hero-content .cc-profile-image {
-        margin-bottom: 20px;
-      }
+      .hero-content .cc-profile-image { margin-bottom: 20px; }
       .hero-content .cc-profile-image img {
-        width: 300px;
-        height: 340px;
-        border-radius: 20%;
-        object-fit: cover;
-        object-position: center;
+        width: 300px; height: 340px; border-radius: 20%;
+        object-fit: cover; object-position: center;
       }
-      .hero-content .title {
-        font-size: 3em;
-        margin-bottom: 15px;
-      }
-      .hero-content .category {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-      }
-      /* Make sure the header buttons are clickable */
-      .header-buttons {
-        position: relative;
-        z-index: 11;
-      }
-      .header-buttons a {
-        margin-right: 10px;
-      }
+      .hero-content .title { font-size: 3em; margin-bottom: 15px; }
+      .hero-content .category { font-size: 1.2em; margin-bottom: 20px; }
+      .header-buttons { position: relative; z-index: 11; }
+      .header-buttons a { margin-right: 10px; }
+
       /* Social icons at bottom center of the viewport */
       .hero-social {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        z-index: 10;
+        position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+        text-align: center; z-index: 10;
       }
-      .hero-social a {
-        margin: 0 8px;
-      }
+      .hero-social a { margin: 0 8px; }
+
       /* Section styling */
-      .section {
-        padding: 50px 0;
-      }
+      .section { padding: 50px 0; }
       .card {
-        background: #fff;
-        color: #333;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+        background: #fff; color: #333; border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px;
       }
-      .card-body {
-        color: #333;
-      }
-      .title {
-        color: #00aaff;
-      }
-      .contact-info {
-        padding: 50px 0;
-        border-radius: 8px;
-      }
+      .card-body { color: #333; }
+      .title { color: #00aaff; }
+      .contact-info { padding: 50px 0; border-radius: 8px; }
+
       /* Fallback for AOS if JavaScript is disabled */
-      noscript [data-aos] {
-        opacity: 1 !important;
-        transform: translate(0) scale(1) !important;
-      }
+      noscript [data-aos] { opacity: 1 !important; transform: translate(0) scale(1) !important; }
+
       /* Skills Carousel Styling */
-      .skills-carousel-wrapper {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-      }
+      .skills-carousel-wrapper { position: relative; width: 100%; margin: 0 auto; }
       .skills-carousel {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        display: flex; overflow-x: auto; scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; scrollbar-width: none;
       }
-      .skills-carousel::-webkit-scrollbar {
-        display: none;
-      }
+      .skills-carousel::-webkit-scrollbar { display: none; }
       .skill-card {
-        flex: 0 0 20%;
-        max-width: 200px;
-        margin: 0 10px;
-        background: #fff;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 150px;
+        flex: 0 0 20%; max-width: 200px; margin: 0 10px; background: #fff;
+        border-radius: 8px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex; flex-direction: column; align-items: center; justify-content: center; height: 150px;
       }
-      .skill-card img {
-        max-width: 80px;
-        max-height: 80px;
-        object-fit: contain;
-        background: transparent;
-        display: block;
-        margin: 0 auto;
-      }
-      .skill-card p {
-        margin-top: 8px;
-        color: #333;
-        font-weight: 600;
-        text-align: center;
-      }
+      .skill-card img { max-width: 80px; max-height: 80px; object-fit: contain; background: transparent; display: block; margin: 0 auto; }
+      .skill-card p { margin-top: 8px; color: #333; font-weight: 600; text-align: center; }
       .arrow-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.6);
-        color: #fff;
-        border: none;
-        font-size: 2rem;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 5;
-        transition: background 0.3s;
+        position: absolute; top: 50%; transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.6); color: #fff; border: none;
+        font-size: 2rem; padding: 10px; cursor: pointer; z-index: 5; transition: background 0.3s;
       }
-      .arrow-btn:hover {
-        background: rgba(0, 0, 0, 0.8);
-      }
-      .arrow-btn.left {
-        left: 0;
-      }
-      .arrow-btn.right {
-        right: 0;
-      }
+      .arrow-btn:hover { background: rgba(0, 0, 0, 0.8); }
+      .arrow-btn.left { left: 0; } .arrow-btn.right { right: 0; }
+
       /* Portfolio Carousel Styling */
-      .portfolio-carousel-wrapper {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-      }
+      .portfolio-carousel-wrapper { position: relative; width: 100%; margin: 0 auto; }
       .portfolio-carousel {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        display: flex; overflow-x: auto; scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; scrollbar-width: none;
       }
-      .portfolio-carousel::-webkit-scrollbar {
-        display: none;
-      }
-      .portfolio-card {
-        flex: 0 0 300px;
-        margin: 0 10px;
-        position: relative;
-      }
-      .portfolio-card figure {
-        margin: 0;
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-      }
-      .portfolio-card img,
-      .portfolio-card video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      .portfolio-carousel::-webkit-scrollbar { display: none; }
+      .portfolio-card { flex: 0 0 300px; margin: 0 10px; position: relative; }
+      .portfolio-card figure { margin: 0; width: 100%; height: 200px; overflow: hidden; position: relative; }
+      .portfolio-card img, .portfolio-card video { width: 100%; height: 100%; object-fit: cover; }
       .portfolio-card figcaption {
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        width: 100%;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.3s;
+        position: absolute; bottom: 0; background: rgba(0, 0, 0, 0.7);
+        width: 100%; color: #fff; padding: 10px; text-align: center; opacity: 0; transition: opacity 0.3s;
       }
-      .portfolio-card figure:hover figcaption {
-        opacity: 1;
-      }
-      /* Experience Carousel Styling */
-      .experience-carousel-wrapper {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-      }
-      .experience-carousel {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-      .experience-carousel::-webkit-scrollbar {
-        display: none;
-      }
-      .experience-card {
-        flex: 0 0 300px;
-        margin: 0 10px;
-        position: relative;
-      }
-      .experience-card .card-content {
-        padding: 15px;
-      }
-      .experience-header {
-        background: #00aaff;
-        color: #fff;
-        padding: 10px;
-        border-radius: 4px;
-        margin-bottom: 10px;
-        text-align: center;
-      }
-      .experience-body {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        text-align: left;
-      }
+      .portfolio-card figure:hover figcaption { opacity: 1; }
+
+      /* Experience Cards */
+      .experience-card { flex: 0 0 300px; margin: 0 10px; position: relative; }
+      .experience-card .card-content { padding: 15px; }
+      .experience-header { background: #00aaff; color: #fff; padding: 10px; border-radius: 4px; margin-bottom: 10px; text-align: center; }
+      .experience-body { font-size: 0.9rem; line-height: 1.4; text-align: left; }
 
       /* --- Current News Small Window (right side, above chatbot) --- */
       #news-widget {
-        position: fixed;
-        right: 20px;
-        bottom: 500px; /* sits above the chatbot area (chatbot max ~480px from bottom) */
-        width: 300px;
-        max-height: 260px;
-        z-index: 9998;
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(6px);
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-        overflow: hidden;
+        position: fixed; right: 20px; bottom: 500px; width: 300px; max-height: 260px;
+        z-index: 9998; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(6px);
+        border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); overflow: hidden;
       }
       #news-header {
-        padding: 10px 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #fff;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 10px 12px; display: flex; align-items: center; justify-content: space-between;
+        color: #fff; border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       }
-      #news-header .title-wrap {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      #news-header .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 9999px;
-        background: #00aaff;
-        box-shadow: 0 0 8px #00aaff;
-      }
-      #news-header h6 {
-        margin: 0;
-        font-size: 0.95rem;
-        letter-spacing: 0.3px;
-      }
-      #news-toggle {
-        background: transparent;
-        color: #fff;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #news-viewport {
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-      }
+      #news-header .title-wrap { display: flex; align-items: center; gap: 8px; }
+      #news-header .dot { width: 8px; height: 8px; border-radius: 9999px; background: #00aaff; box-shadow: 0 0 8px #00aaff; }
+      #news-header h6 { margin: 0; font-size: 0.95rem; letter-spacing: 0.3px; }
+      #news-toggle { background: transparent; color: #fff; border: none; font-size: 16px; cursor: pointer; }
+      #news-viewport { height: 200px; overflow: hidden; position: relative; }
       #news-list {
-        list-style: none;
-        padding: 10px 12px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+        list-style: none; padding: 10px 12px; margin: 0; display: flex; flex-direction: column; gap: 12px;
         animation: news-scroll 18s linear infinite;
       }
-      #news-list li {
-        color: #e9f7ff;
-        font-size: 0.9rem;
-        line-height: 1.25rem;
-      }
-      #news-list li small {
-        display: block;
-        opacity: 0.7;
-        font-size: 0.75rem;
-        margin-top: 4px;
-      }
-      #news-widget:hover #news-list {
-        animation-play-state: paused;
-      }
-      @keyframes news-scroll {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-50%);
-        } /* duplicated by JS for seamless loop */
-      }
-      @media (max-width: 992px) {
-        #news-widget {
-          display: none;
-        }
-      }
+      #news-list li { color: #e9f7ff; font-size: 0.9rem; line-height: 1.25rem; }
+      #news-list li small { display: block; opacity: 0.7; font-size: 0.75rem; margin-top: 4px; }
+      #news-widget:hover #news-list { animation-play-state: paused; }
+      @keyframes news-scroll { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+      @media (max-width: 992px) { #news-widget { display: none; } }
 
-      /* --- Floating Chat Button + Chat Window --- */
-      /* (unchanged from your file; inline styles below for layout) */
+      /* === Gallery (grid + lightbox) === */
+      .gallery-grid {
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+      }
+      @media (max-width: 1200px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 768px)  { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 480px)  { .gallery-grid { grid-template-columns: 1fr; } }
+
+      .gallery-card {
+        position: relative; margin: 0; border-radius: 8px; overflow: hidden; cursor: pointer;
+        background: #111; box-shadow: 0 6px 14px rgba(0,0,0,.25);
+        transition: transform .25s ease, box-shadow .25s ease;
+      }
+      .gallery-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,.35); }
+      .gallery-card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+      .gallery-card figcaption {
+        position: absolute; left: 0; right: 0; bottom: 0;
+        padding: 8px 10px; font-size: .9rem; color: #fff;
+        background: linear-gradient(transparent, rgba(0,0,0,.75));
+      }
+      .lightbox {
+        position: fixed; inset: 0; background: rgba(0,0,0,.85);
+        display: none; align-items: center; justify-content: center;
+        z-index: 11000; padding: 20px;
+      }
+      .lightbox.is-open { display: flex; }
+      .lb-image {
+        max-width: 90vw; max-height: 80vh; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.6);
+      }
+      .lb-btn {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        border: none; background: rgba(0,0,0,.5); color: #fff;
+        width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 22px;
+        display: grid; place-items: center; transition: background .2s ease;
+      }
+      .lb-btn:hover { background: rgba(0,0,0,.75); }
+      .lb-prev { left: 24px; } .lb-next { right: 24px; }
+      .lb-close { top: 18px; right: 18px; left: auto; transform: none; width: 44px; height: 44px; font-size: 28px; }
     </style>
   </head>
   <body id="top">
     <!-- Fixed Video Background -->
     <div class="video-background">
       <video autoplay loop muted playsinline>
-        <source
-          src="images/20250217_1808_Robot Assembles Car_simple_compose_01jmbd0gs7f6y8k27vdafdqhfg.mp4"
-          type="video/mp4"
-        />
+        <source src="images/20250217_1808_Robot Assembles Car_simple_compose_01jmbd0gs7f6y8k27vdafdqhfg.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
     </div>
 
     <!-- Navbar (Aligned to Right) -->
-    <nav
-      class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary"
-      color-on-scroll="400"
-    >
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
       <div class="container-fluid">
         <div class="navbar-translate">
-          <!-- Empty brand is hidden -->
           <a class="navbar-brand" href="#" rel="tooltip"></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navigation"
-            aria-controls="navigation"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar bar1"></span>
             <span class="navbar-toggler-bar bar2"></span>
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navigation"
-        >
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#skill">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#experience"
-                >Experience</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#contact">Contact</a>
-            </li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -456,75 +227,24 @@
 
     <!-- Full-Screen Hero Section -->
     <div class="page-header">
-      <!-- Hero Content: Left-Centered -->
       <div class="hero-content">
-        <div class="cc-profile-image">
-          <a href="#">
-            <img src="images/IMG_1225.jpg" alt="Profile" />
-          </a>
-        </div>
+        <div class="cc-profile-image"><a href="#"><img src="images/IMG_1225.jpg" alt="Profile" /></a></div>
         <div class="h2 title" style="margin-bottom: 15px">Heman</div>
-        <p class="category text-white">
-          Mechanical Engineer | Robotics & Automation
-        </p>
+        <p class="category text-white">Mechanical Engineer | Robotics & Automation</p>
         <div class="header-buttons">
-          <!-- Hero buttons open in new tabs. Ensure the file path is correct. -->
-          <a
-            class="btn btn-primary mr-2"
-            href="https://docs.google.com/presentation/d/1SxKS3ZwxVrQ_uNVON31Ku39tauRNJMFsL58H7qQTr30/edit?usp=sharing"
-            target="_blank"
-            >Design Portfolio</a
-          >
-          <a
-            class="btn btn-primary"
-            href="images/Heman_Resume_up.pdf"
-            target="_blank"
-            >Download CV</a
-          >
+          <a class="btn btn-primary mr-2" href="https://docs.google.com/presentation/d/1SxKS3ZwxVrQ_uNVON31Ku39tauRNJMFsL58H7qQTr30/edit?usp=sharing" target="_blank">Design Portfolio</a>
+          <a class="btn btn-primary" href="images/Heman_Resume_up.pdf" target="_blank">Download CV</a>
         </div>
       </div>
-      <!-- Social Icons: Bottom Center -->
       <div class="hero-social">
-        <a
-          class="btn btn-default btn-round btn-lg btn-icon"
-          href="https://www.linkedin.com/in/heman-saini-5b2309189/"
-          rel="tooltip"
-          title="Follow me on LinkedIn"
-          target="_blank"
-        >
-          <i class="fa fa-linkedin-square"></i>
-        </a>
-        <a
-          class="btn btn-default btn-round btn-lg btn-icon"
-          href="https://github.com/Heman15"
-          rel="tooltip"
-          title="Follow me on Github"
-          target="_blank"
-        >
-          <i class="fa fa-github"></i>
-        </a>
-        <a
-          class="btn btn-default btn-round btn-lg btn-icon"
-          href="https://www.instagram.com/sainiheman.15"
-          rel="tooltip"
-          title="Follow me on Instagram"
-          target="_blank"
-        >
-          <i class="fa fa-instagram"></i>
-        </a>
-        <a
-          class="btn btn-default btn-round btn-lg btn-icon"
-          href="https://medium.com/@sainiheman"
-          rel="tooltip"
-          title="Follow me on Medium"
-          target="_blank"
-        >
-          <i class="fa fa-medium"></i>
-        </a>
+        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/heman-saini-5b2309189/" rel="tooltip" title="Follow me on LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/Heman15" rel="tooltip" title="Follow me on Github" target="_blank"><i class="fa fa-github"></i></a>
+        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/sainiheman.15" rel="tooltip" title="Follow me on Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://medium.com/@sainiheman" rel="tooltip" title="Follow me on Medium" target="_blank"><i class="fa fa-medium"></i></a>
       </div>
     </div>
 
-    <!-- MAIN CONTENT (All sections with translucent backgrounds) -->
+    <!-- MAIN CONTENT -->
     <div class="page-content">
       <!-- About Section -->
       <div class="section" id="about">
@@ -534,207 +254,109 @@
               <div class="col-lg-6 col-md-12">
                 <div class="card-body">
                   <div class="h4 mt-0 title">About</div>
-                  <p>
-                    Hello! I’m Heman, a passionate Robotics & Mechanical
-                    Engineer with expertise in robotic automation, motion
-                    planning, and high-precision mechanical design.
-                  </p>
-                  <p>
-                    I hold a Master’s in Robotics from UC Riverside and a
-                    Bachelor’s in Mechanical Engineering from Maharshi Dayanand
-                    University, India. With over three years of experience in
-                    mechanical design and electro-mechanical system integration,
-                    I specialize in bridging hardware and software to develop
-                    intelligent robotic solutions.
-                  </p>
-                  <p>
-                    My expertise spans robotic system integration, AI-driven
-                    perception, and CAD-based mechanical design, with hands-on
-                    experience in ROS, Python, C++, MATLAB, SolidWorks (CSWA),
-                    and PCL. I have worked on projects involving teleoperation,
-                    action recognition, and industrial automation, aiming to
-                    enhance human-robot collaboration and real-world deployment
-                    of robotic systems.
-                  </p>
+                  <p>Hello! I’m Heman, a passionate Robotics & Mechanical Engineer with expertise in robotic automation, motion planning, and high-precision mechanical design.</p>
+                  <p>I hold a Master’s in Robotics from UC Riverside and a Bachelor’s in Mechanical Engineering from Maharshi Dayanand University, India. With over three years of experience in mechanical design and electro-mechanical system integration, I specialize in bridging hardware and software to develop intelligent robotic solutions.</p>
+                  <p>My expertise spans robotic system integration, AI-driven perception, and CAD-based mechanical design, with hands-on experience in ROS, Python, C++, MATLAB, SolidWorks (CSWA), and PCL. I have worked on projects involving teleoperation, action recognition, and industrial automation, aiming to enhance human-robot collaboration and real-world deployment of robotic systems.</p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-12">
                 <div class="card-body">
                   <div class="h4 mt-0 title">Basic Information</div>
                   <div class="row mt-3">
-                    <div class="col-sm-4">
-                      <strong class="text-uppercase">Email:</strong>
-                    </div>
+                    <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
                     <div class="col-sm-8">sainiheman.94@gmail.com</div>
                   </div>
                   <div class="row mt-3">
-                    <div class="col-sm-4">
-                      <strong class="text-uppercase">Phone:</strong>
-                    </div>
+                    <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
                     <div class="col-sm-8">+1 (951)-548-4124</div>
                   </div>
                   <div class="row mt-3">
-                    <div class="col-sm-4">
-                      <strong class="text-uppercase">Language:</strong>
-                    </div>
+                    <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
                     <div class="col-sm-8">English, Hindi</div>
                   </div>
                   <div class="row mt-3">
-                    <div class="col-sm-4">
-                      <strong class="text-uppercase"
-                        >Work Authorization:</strong
-                      >
-                    </div>
-                    <div class="col-sm-8">
-                      Authorized to work in the United States (STEM OPT)
-                    </div>
+                    <div class="col-sm-4"><strong class="text-uppercase">Work Authorization:</strong></div>
+                    <div class="col-sm-8">Authorized to work in the United States (STEM OPT)</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> 
       <!-- End About Section -->
+
+      <!-- Gallery Section (NEW) -->
+      <div class="section" id="gallery">
+        <div class="container">
+          <div class="h4 text-center mb-4 title">Gallery</div>
+          <div class="gallery-grid">
+            <!-- Replace with your images -->
+            <figure class="gallery-card" data-full="images/gallery/img1.jpg" data-caption="Project 1">
+              <img src="images/gallery/thumbs/img1.jpg" alt="Project 1">
+              <figcaption>Project 1</figcaption>
+            </figure>
+            <figure class="gallery-card" data-full="images/gallery/img2.jpg" data-caption="Project 2">
+              <img src="images/gallery/thumbs/img2.jpg" alt="Project 2">
+              <figcaption>Project 2</figcaption>
+            </figure>
+            <figure class="gallery-card" data-full="images/gallery/img3.jpg" data-caption="Project 3">
+              <img src="images/gallery/thumbs/img3.jpg" alt="Project 3">
+              <figcaption>Project 3</figcaption>
+            </figure>
+            <figure class="gallery-card" data-full="images/gallery/img4.jpg" data-caption="Project 4">
+              <img src="images/gallery/thumbs/img4.jpg" alt="Project 4">
+              <figcaption>Project 4</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
 
       <!-- Skills Section -->
       <div class="section" id="skill">
         <div class="container">
           <h4 class="text-center mb-4 title">Software Tools</h4>
           <div class="skills-carousel-wrapper">
-            <button
-              class="arrow-btn left"
-              onclick="scrollCarousel('softwareTools', -250)"
-            >
-              &#10094;
-            </button>
+            <button class="arrow-btn left" onclick="scrollCarousel('softwareTools', -250)">&#10094;</button>
             <div class="skills-carousel" id="softwareTools">
-              <div class="skill-card">
-                <img
-                  src="images/png-clipart-red-and-white-sw-cube-illustration-solidworks-logo-computer-software-mechanical-engineering-cam-newton-miscellaneous-3d-computer-graphics-thumbnail.png"
-                  alt="SolidWorks"
-                />
-                <p>SolidWorks</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/FPB-RbrXsAIjkjE.jpg" alt="MuJoCo" />
-                <p>MuJoCo</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/images.png" alt="CATIA" />
-                <p>CATIA</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (1).png" alt="Gazebo" />
-                <p>Gazebo</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (5).jpeg" alt="Star-CMM" />
-                <p>Star-CMM</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (12).png" alt="Ansys" />
-                <p>Ansys</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (1).jpeg" alt="RVIZ" />
-                <p>RVIZ</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (2).png" alt="MoveIt" />
-                <p>MoveIt</p>
-              </div>
+              <div class="skill-card"><img src="images/png-clipart-red-and-white-sw-cube-illustration-solidworks-logo-computer-software-mechanical-engineering-cam-newton-miscellaneous-3d-computer-graphics-thumbnail.png" alt="SolidWorks"/><p>SolidWorks</p></div>
+              <div class="skill-card"><img src="images/FPB-RbrXsAIjkjE.jpg" alt="MuJoCo"/><p>MuJoCo</p></div>
+              <div class="skill-card"><img src="images/images.png" alt="CATIA"/><p>CATIA</p></div>
+              <div class="skill-card"><img src="images/download (1).png" alt="Gazebo"/><p>Gazebo</p></div>
+              <div class="skill-card"><img src="images/download (5).jpeg" alt="Star-CMM"/><p>Star-CMM</p></div>
+              <div class="skill-card"><img src="images/download (12).png" alt="Ansys"/><p>Ansys</p></div>
+              <div class="skill-card"><img src="images/download (1).jpeg" alt="RVIZ"/><p>RVIZ</p></div>
+              <div class="skill-card"><img src="images/download (2).png" alt="MoveIt"/><p>MoveIt</p></div>
             </div>
-            <button
-              class="arrow-btn right"
-              onclick="scrollCarousel('softwareTools', 250)"
-            >
-              &#10095;
-            </button>
+            <button class="arrow-btn right" onclick="scrollCarousel('softwareTools', 250)">&#10095;</button>
           </div>
 
           <h4 class="text-center mb-4 title">Programming & Software Tools</h4>
           <div class="skills-carousel-wrapper">
-            <button
-              class="arrow-btn left"
-              onclick="scrollCarousel('programmingTools', -250)"
-            >
-              &#10094;
-            </button>
+            <button class="arrow-btn left" onclick="scrollCarousel('programmingTools', -250)">&#10094;</button>
             <div class="skills-carousel" id="programmingTools">
-              <div class="skill-card">
-                <img src="images/download (2).jpeg" alt="Python" />
-                <p>Python</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (3).png" alt="C++" />
-                <p>C++</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (4).png" alt="ROS" />
-                <p>ROS / ROS2</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (5).png" alt="Git" />
-                <p>Git</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (6).png" alt="AWS" />
-                <p>AWS</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (3).jpeg" alt="Linux" />
-                <p>Linux</p>
-              </div>
+              <div class="skill-card"><img src="images/download (2).jpeg" alt="Python"/><p>Python</p></div>
+              <div class="skill-card"><img src="images/download (3).png" alt="C++"/><p>C++</p></div>
+              <div class="skill-card"><img src="images/download (4).png" alt="ROS"/><p>ROS / ROS2</p></div>
+              <div class="skill-card"><img src="images/download (5).png" alt="Git"/><p>Git</p></div>
+              <div class="skill-card"><img src="images/download (6).png" alt="AWS"/><p>AWS</p></div>
+              <div class="skill-card"><img src="images/download (3).jpeg" alt="Linux"/><p>Linux</p></div>
             </div>
-            <button
-              class="arrow-btn right"
-              onclick="scrollCarousel('programmingTools', 250)"
-            >
-              &#10095;
-            </button>
+            <button class="arrow-btn right" onclick="scrollCarousel('programmingTools', 250)">&#10095;</button>
           </div>
 
           <h4 class="text-center mb-4 title">Technical Skills</h4>
           <div class="skills-carousel-wrapper">
-            <button
-              class="arrow-btn left"
-              onclick="scrollCarousel('technicalSkills', -250)"
-            >
-              &#10094;
-            </button>
+            <button class="arrow-btn left" onclick="scrollCarousel('technicalSkills', -250)">&#10094;</button>
             <div class="skills-carousel" id="technicalSkills">
-              <div class="skill-card">
-                <img src="images/download (8).png" alt="PLM" />
-                <p>PLM</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (10).png" alt="Rapid Prototyping" />
-                <p>Rapid Prototyping</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (11).png" alt="Manufacturing" />
-                <p>Manufacturing</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (7).png" alt="DFMA" />
-                <p>DFMA / DFME</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (9).png" alt="3D Printing" />
-                <p>3D Printing</p>
-              </div>
-              <div class="skill-card">
-                <img src="images/download (4).jpeg" alt="GD&T" />
-                <p>GD&T</p>
-              </div>
+              <div class="skill-card"><img src="images/download (8).png" alt="PLM"/><p>PLM</p></div>
+              <div class="skill-card"><img src="images/download (10).png" alt="Rapid Prototyping"/><p>Rapid Prototyping</p></div>
+              <div class="skill-card"><img src="images/download (11).png" alt="Manufacturing"/><p>Manufacturing</p></div>
+              <div class="skill-card"><img src="images/download (7).png" alt="DFMA"/><p>DFMA / DFME</p></div>
+              <div class="skill-card"><img src="images/download (9).png" alt="3D Printing"/><p>3D Printing</p></div>
+              <div class="skill-card"><img src="images/download (4).jpeg" alt="GD&T"/><p>GD&T</p></div>
             </div>
-            <button
-              class="arrow-btn right"
-              onclick="scrollCarousel('technicalSkills', 250)"
-            >
-              &#10095;
-            </button>
+            <button class="arrow-btn right" onclick="scrollCarousel('technicalSkills', 250)">&#10095;</button>
           </div>
         </div>
       </div>
@@ -743,98 +365,50 @@
       <!-- Portfolio Section -->
       <div class="section" id="portfolio">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-              <div class="h4 text-center mb-4 title">Portfolio</div>
-            </div>
-          </div>
+          <div class="row"><div class="col-md-6 ml-auto mr-auto"><div class="h4 text-center mb-4 title">Portfolio</div></div></div>
           <div class="portfolio-carousel-wrapper">
-            <button
-              class="arrow-btn left"
-              onclick="scrollCarousel('portfolioCarousel', -300)"
-            >
-              &#10094;
-            </button>
+            <button class="arrow-btn left" onclick="scrollCarousel('portfolioCarousel', -300)">&#10094;</button>
             <div class="portfolio-carousel" id="portfolioCarousel">
-              <div
-                class="portfolio-card"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom"
-              >
+              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <a href="detailMain.html">
                   <figure class="cc-effect">
                     <img src="images/untitled.5.jpg" alt="CAD Design" />
-                    <figcaption>
-                      <div class="h4">Cad Design</div>
-                      <p>Click Here</p>
-                    </figcaption>
+                    <figcaption><div class="h4">Cad Design</div><p>Click Here</p></figcaption>
                   </figure>
                 </a>
               </div>
-              <div
-                class="portfolio-card"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom"
-              >
+              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <a href="detailMain2.html">
                   <figure class="cc-effect">
                     <video controls autoplay muted>
-                      <source
-                        src="images/Langchain Project.mp4"
-                        type="video/mp4"
-                      />
+                      <source src="images/Langchain Project.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                    <figcaption>
-                      <div class="h4">Computer Vision</div>
-                      <p>Click Here</p>
-                    </figcaption>
+                    <figcaption><div class="h4">Computer Vision</div><p>Click Here</p></figcaption>
                   </figure>
                 </a>
               </div>
-              <div
-                class="portfolio-card"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom"
-              >
+              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <a href="detailMain3.html">
                   <figure class="cc-effect">
                     <video controls autoplay muted>
                       <source src="images/ALOHA2.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                    <figcaption>
-                      <div class="h4">Robotics Project</div>
-                      <p>Click Here</p>
-                    </figcaption>
+                    <figcaption><div class="h4">Robotics Project</div><p>Click Here</p></figcaption>
                   </figure>
                 </a>
               </div>
-              <div
-                class="portfolio-card"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom"
-              >
+              <div class="portfolio-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <a href="detailMain4.html">
                   <figure class="cc-effect">
-                    <img
-                      src="images/20211016_164140.jpg"
-                      alt="Other Portfolio"
-                    />
-                    <figcaption>
-                      <div class="h4">Other</div>
-                      <p>Click Here</p>
-                    </figcaption>
+                    <img src="images/20211016_164140.jpg" alt="Other Portfolio" />
+                    <figcaption><div class="h4">Other</div><p>Click Here</p></figcaption>
                   </figure>
                 </a>
               </div>
             </div>
-            <button
-              class="arrow-btn right"
-              onclick="scrollCarousel('portfolioCarousel', 300)"
-            >
-              &#10095;
-            </button>
+            <button class="arrow-btn right" onclick="scrollCarousel('portfolioCarousel', 300)">&#10095;</button>
           </div>
         </div>
       </div>
@@ -844,239 +418,115 @@
       <div class="section" id="experience">
         <div class="container cc-experience">
           <div class="h4 text-center mb-4 title">Work Experience</div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-experience-header">
                   <p>June 2025 - August 2025</p>
                   <div class="h5">University of California, Los Angeles</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="60"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="60" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Robotic Instructor</b></u>
-                  </div>
-                  <p>
-                    Design and delivered two 3-week robotics courses (CAD,
-                    sensor integration, Python) and guide student teams through
-                    robot prototyping (mechanical assembly, integration,
-                    coding).
-                  </p>
-
-                  <p></p>
+                  <div class="h5"><u><b>Robotic Instructor</b></u></div>
+                  <p>Design and delivered two 3-week robotics courses (CAD, sensor integration, Python) and guide student teams through robot prototyping (mechanical assembly, integration, coding).</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-experience-header">
                   <p>June 2024 - August 2024</p>
                   <div class="h5">OrangeWood Labs (YC-18)</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="60"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="60" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Robotic Engineer Intern</b></u>
-                  </div>
-                  <p>
-                    Utilized PCL for advanced 3D point cloud processing and
-                    integrated MoveIt! for efficient motion planning and
-                    trajectory optimization, enabling precise environment
-                    mapping and improved robotic system performance.
-                  </p>
-                  <p>
-                    Developed C++ automation scripts for the ROS-based AutoSpray
-                    Robot, enhancing on-the-go navigation and motion planning
-                    capabilities.
-                  </p>
-                  <p>
-                    Designed and manufacture a robotic arm enclosure,
-                    collaborated with electrical and electronics teams to make a
-                    manufacturing-ready product with sensor mounts, and wiring
-                    integration. Applied DFM/DFA and GD&T, reduced 15% machining
-                    cost.
-                  </p>
+                  <div class="h5"><u><b>Robotic Engineer Intern</b></u></div>
+                  <p>Utilized PCL for advanced 3D point cloud processing and integrated MoveIt! for efficient motion planning and trajectory optimization, enabling precise environment mapping and improved robotic system performance.</p>
+                  <p>Developed C++ automation scripts for the ROS-based AutoSpray Robot, enhancing on-the-go navigation and motion planning capabilities.</p>
+                  <p>Designed and manufacture a robotic arm enclosure, collaborated with electrical and electronics teams to make a manufacturing-ready product with sensor mounts, and wiring integration. Applied DFM/DFA and GD&T, reduced 15% machining cost.</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-experience-header">
                   <p>December 2022 - September 2023</p>
                   <div class="h5">E-fill Electric Vehicle Pvt. Ltd.</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Design Engineer</b></u>
-                  </div>
-                  <p>
-                    Led the design and development of a three-wheeler electric
-                    vehicle, ensuring compliance with ISO 9001/14001 standards
-                    using SolidWorks and CATIA for 3D modeling.
-                  </p>
-                  <p>
-                    Managed SAP ERP for BOM to streamline procurement and ensure
-                    accurate documentation, improving inventory control and
-                    procurement efficiency.
-                  </p>
-                  <p>
-                    Conducted FEA using ANSYS for structural integrity and
-                    cost-effective material selection in new product
-                    development, optimizing safety and performance.
-                  </p>
+                  <div class="h5"><u><b>Design Engineer</b></u></div>
+                  <p>Led the design and development of a three-wheeler electric vehicle, ensuring compliance with ISO 9001/14001 standards using SolidWorks and CATIA for 3D modeling.</p>
+                  <p>Managed SAP ERP for BOM to streamline procurement and ensure accurate documentation, improving inventory control and procurement efficiency.</p>
+                  <p>Conducted FEA using ANSYS for structural integrity and cost-effective material selection in new product development, optimizing safety and performance.</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-experience-header">
                   <p>April 2022 - November 2022</p>
                   <div class="h5">Mood Advanced Systems Pvt. Ltd.</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Mechanical Engineer</b></u>
-                  </div>
-                  <p>
-                    Designed components for armored vehicles, steering
-                    assemblies, and military weapons, ensuring compliance with
-                    rigorous specifications. Created detailed production
-                    drawings using AutoCAD and SolidWorks.
-                  </p>
+                  <div class="h5"><u><b>Mechanical Engineer</b></u></div>
+                  <p>Designed components for armored vehicles, steering assemblies, and military weapons, ensuring compliance with rigorous specifications. Created detailed production drawings using AutoCAD and SolidWorks.</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-experience-header">
                   <p>June 2021 - November 2021</p>
                   <div class="h5">Greenvolt Mobility LLP</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Mechanical Engineer</b></u>
-                  </div>
-                  <p>
-                    Designed track recording testing machines and devices to
-                    enhance and optimize vehicle performance, including a
-                    replica data collection device for creating an autonomous
-                    kit for Indian roads.
-                  </p>
-                  <p>
-                    Developed data acquisition systems for DC motors and
-                    electric vehicle battery systems, enabling precise
-                    measurements of motor, controller, and battery pack
-                    performance.
-                  </p>
-                  <p>
-                    Optimized the ergonomics of electric two-wheelers,
-                    demonstrating a holistic approach to vehicle innovation and
-                    user experience.
-                  </p>
+                  <div class="h5"><u><b>Mechanical Engineer</b></u></div>
+                  <p>Designed track recording testing machines and devices to enhance and optimize vehicle performance, including a replica data collection device for creating an autonomous kit for Indian roads.</p>
+                  <p>Developed data acquisition systems for DC motors and electric vehicle battery systems, enabling precise measurements of motor, controller, and battery pack performance.</p>
+                  <p>Optimized the ergonomics of electric two-wheelers, demonstrating a holistic approach to vehicle innovation and user experience.</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-experience-header">
                   <p>June 2019 - July 2019</p>
                   <div class="h5">Honda Two-Wheeler Pvt. Ltd.</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Intern</b></u>
-                  </div>
-                  <p>
-                    Inspected wiring harnesses in Honda Shine (125cc), Honda
-                    CBR150, and Hornet models, ensuring top-notch quality and
-                    performance. Contributed to the manual assembly inspection
-                    of the African Twin and the engine assembly inspection of
-                    Activa and Honda Shine (125cc), ensuring flawless operation.
-                  </p>
+                  <div class="h5"><u><b>Intern</b></u></div>
+                  <p>Inspected wiring harnesses in Honda Shine (125cc), Honda CBR150, and Hornet models, ensuring top-notch quality and performance. Contributed to the manual assembly inspection of the African Twin and the engine assembly inspection of Activa and Honda Shine (125cc), ensuring flawless operation.</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
       <!-- End Experience Section -->
@@ -1085,126 +535,68 @@
       <div class="section" id="education">
         <div class="container cc-education">
           <div class="h4 text-center mb-4 title">Education</div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-education-header">
                   <p>2023 - 2025</p>
                   <div class="h5">Master's Degree</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Master in Robotics</b></u>
-                  </div>
+                  <div class="h5"><u><b>Master in Robotics</b></u></div>
                   <p class="category">University of California, Riverside</p>
-                  <p>
-                    I hold a Master’s degree in Robotics, Automation, and
-                    Mechatronics, specializing in Computer Science. This
-                    advanced program enables me to immerse myself in the
-                    sophisticated realms of robotics and automation, enhancing
-                    my proficiency in state-of-the-art technologies and their
-                    practical applications. Through a comprehensive blend of
-                    theoretical knowledge and hands-on experience, I am building
-                    a robust foundation in robotics, equipping myself to address
-                    and overcome complex challenges in the fields of automation
-                    and mechatronics.
-                  </p>
+                  <p>I hold a Master’s degree in Robotics, Automation, and Mechatronics, specializing in Computer Science. This advanced program enables me to immerse myself in the sophisticated realms of robotics and automation, enhancing my proficiency in state-of-the-art technologies and their practical applications. Through a comprehensive blend of theoretical knowledge and hands-on experience, I am building a robust foundation in robotics, equipping myself to address and overcome complex challenges in the fields of automation and mechatronics.</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-education-header">
                   <p>2017 - 2021</p>
                   <div class="h5">Bachelor's Degree</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Bachelor of Mechanical Engineering</b></u>
-                  </div>
+                  <div class="h5"><u><b>Bachelor of Mechanical Engineering</b></u></div>
                   <p class="category">Maharshi Dayanand University</p>
-                  <p>
-                    I completed a Bachelor of Technology in Mechanical
-                    Engineering, graduating in July 2021. This degree equipped
-                    me with a strong understanding of mechanical engineering
-                    principles and their real-world applications. Throughout my
-                    academic journey, I gained valuable insights into various
-                    facets of mechanical engineering, preparing me to tackle
-                    challenges and contribute meaningfully to the field.
-                  </p>
+                  <p>I completed a Bachelor of Technology in Mechanical Engineering, graduating in July 2021. This degree equipped me with a strong understanding of mechanical engineering principles and their real-world applications. Throughout my academic journey, I gained valuable insights into various facets of mechanical engineering, preparing me to tackle challenges and contribute meaningfully to the field.</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="row">
-              <div
-                class="col-md-3 bg-primary"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body cc-education-header">
                   <p>2015 - 2016</p>
                   <div class="h5">High School</div>
                 </div>
               </div>
-              <div
-                class="col-md-9"
-                data-aos="fade-left"
-                data-aos-offset="50"
-                data-aos-duration="500"
-              >
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
-                  <div class="h5">
-                    <u><b>Science and Mathematics</b></u>
-                  </div>
+                  <div class="h5"><u><b>Science and Mathematics</b></u></div>
                   <p class="category">School of Secondary Board</p>
-                  <p>
-                    I completed my high school education in July 2016. This
-                    foundational education provided me with a strong academic
-                    footing and laid the groundwork for my future pursuits.
-                  </p>
+                  <p>I completed my high school education in July 2016. This foundational education provided me with a strong academic footing and laid the groundwork for my future pursuits.</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
       <!-- End Education Section -->
 
       <!-- Contact Section -->
       <div class="section contact-info" id="contact">
-        <div
-          class="cc-contact-information"
-          style="background-image: url(&quot;images/staticmap.png&quot;)"
-        >
+        <div class="cc-contact-information" style="background-image: url('images/staticmap.png')">
           <div class="container">
             <div class="cc-contact">
               <div class="row">
@@ -1214,84 +606,48 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="card-body">
-                          <!-- Contact form action uses Formspree; can be changed as needed -->
-                          <form
-                            action="https://formspree.io/your@email.com"
-                            method="POST"
-                          >
-                            <div class="p pb-3">
-                              <strong>Feel free to contact me</strong>
-                            </div>
+                          <form action="https://formspree.io/your@email.com" method="POST">
+                            <div class="p pb-3"><strong>Feel free to contact me</strong></div>
                             <div class="row mb-3">
                               <div class="col">
                                 <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="fa fa-user-circle"></i>
-                                  </span>
-                                  <input
-                                    class="form-control"
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                    required
-                                  />
+                                  <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                                  <input class="form-control" type="text" name="name" placeholder="Name" required />
                                 </div>
                               </div>
                             </div>
                             <div class="row mb-3">
                               <div class="col">
                                 <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="fa fa-file-text"></i>
-                                  </span>
-                                  <input
-                                    class="form-control"
-                                    type="text"
-                                    name="Subject"
-                                    placeholder="Subject"
-                                    required
-                                  />
+                                  <span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                                  <input class="form-control" type="text" name="Subject" placeholder="Subject" required />
                                 </div>
                               </div>
                             </div>
                             <div class="row mb-3">
                               <div class="col">
                                 <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="fa fa-envelope"></i>
-                                  </span>
-                                  <input
-                                    class="form-control"
-                                    type="email"
-                                    name="_replyto"
-                                    placeholder="E-mail"
-                                    required
-                                  />
+                                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                  <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required />
                                 </div>
                               </div>
                             </div>
                             <div class="row mb-3">
                               <div class="col">
                                 <div class="form-group">
-                                  <textarea
-                                    class="form-control"
-                                    name="message"
-                                    placeholder="Your Message"
-                                    required
-                                  ></textarea>
+                                  <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
                                 </div>
                               </div>
                             </div>
                             <div class="row">
                               <div class="col">
-                                <button class="btn btn-primary" type="submit">
-                                  Send
-                                </button>
+                                <button class="btn btn-primary" type="submit">Send</button>
                               </div>
                             </div>
                           </form>
                         </div>
                       </div>
+
                       <div class="col-md-6">
                         <div class="card-body">
                           <p class="mb-0"><strong>Address</strong></p>
@@ -1301,6 +657,7 @@
                           <p>sainiheman.94@gmail.com</p>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
@@ -1317,24 +674,10 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container text-center">
-        <a
-          class="cc-facebook btn btn-link"
-          href="https://www.linkedin.com/in/heman-saini-5b2309189/"
-        >
-          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-        </a>
-        <a class="cc-github btn btn-link" href="https://github.com/Heman15">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a class="cc-medium btn btn-link" href="https://medium.com/@sainiheman">
-          <i class="fa fa-medium" aria-hidden="true"></i>
-        </a>
-        <a
-          class="cc-instagram btn btn-link"
-          href="https://www.instagram.com/sainiheman.15"
-        >
-          <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-        </a>
+        <a class="cc-facebook btn btn-link" href="https://www.linkedin.com/in/heman-saini-5b2309189/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a class="cc-github btn btn-link" href="https://github.com/Heman15"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a class="cc-medium btn btn-link" href="https://medium.com/@sainiheman"><i class="fa fa-medium" aria-hidden="true"></i></a>
+        <a class="cc-instagram btn btn-link" href="https://www.instagram.com/sainiheman.15"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
       </div>
       <div class="h4 title text-center">Heman</div>
     </footer>
@@ -1346,229 +689,53 @@
           <span class="dot" aria-hidden="true"></span>
           <h6>Current News</h6>
         </div>
-        <button
-          id="news-toggle"
-          title="Collapse/Expand"
-          aria-label="Collapse or expand"
-        >
-          –
-        </button>
+        <button id="news-toggle" title="Collapse/Expand" aria-label="Collapse or expand">–</button>
       </div>
       <div id="news-viewport">
         <ul id="news-list">
-          <!-- Edit these items freely -->
-          <li>
-            Working as a Visiting Scholar at UC Riverside on ML-based human action recognition for advanced robotic interaction. 
-            <small>May 15, 2025</small>
-          </li>
-          <li>
-            Wrapped up two 3-week sessions as a Robotics Instructor at UCLA Summer Discovery Program, teaching CAD, Python, and hands-on robot prototyping to high school students.
-            <small>August 10, 2025</small>
-          </li>
-          <li>
-            Earned Master’s in Robotics, Automation & Mechatronics (GPA 3.57) – UC Riverside.
-            <small>March 23, 2025</small>
-          </li>
-          <li>
-            Currently exploring career opportunities in Mechanical Design, Manufacturing, or Robotics Engineering. — open to relocation.
-            <small>May 15, 2025</small>
-          </li>
+          <li>Working as a Visiting Scholar at UC Riverside on ML-based human action recognition for advanced robotic interaction. <small>May 15, 2025</small></li>
+          <li>Wrapped up two 3-week sessions as a Robotics Instructor at UCLA Summer Discovery Program, teaching CAD, Python, and hands-on robot prototyping to high school students. <small>August 10, 2025</small></li>
+          <li>Earned Master’s in Robotics, Automation & Mechatronics (GPA 3.57) – UC Riverside. <small>March 23, 2025</small></li>
+          <li>Currently exploring career opportunities in Mechanical Design, Manufacturing, or Robotics Engineering — open to relocation. <small>May 15, 2025</small></li>
         </ul>
       </div>
     </aside>
 
     <!-- Floating Chat Button + Chat Window -->
-    <div
-      id="chatbot-container"
-      style="position: fixed; bottom: 20px; right: 20px; z-index: 9999"
-    >
-      <!-- Floating Button -->
-      <button
-        id="chatbot-toggle-btn"
-        style="
-          background: #00aaff;
-          border: none;
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
-          color: #fff;
-          cursor: pointer;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          font-size: 24px;
-          outline: none;
-        "
-      >
+    <div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999">
+      <button id="chatbot-toggle-btn" style="background: #00aaff; border: none; border-radius: 50%; width: 60px; height: 60px; color: #fff; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3); font-size: 24px; outline: none;">
         <i class="fa fa-comments" aria-hidden="true"></i>
       </button>
-
-      <!-- Chatbot Window (Initially Hidden) -->
-      <div
-        id="chatbot-window"
-        style="
-          display: none;
-          position: absolute;
-          bottom: 80px; /* Just above the button */
-          right: 0;
-          width: 300px;
-          max-height: 400px;
-          background: rgba(212, 230, 227, 0.9);
-          border-radius: 10px;
-          overflow: hidden;
-        "
-      >
-        <!-- Chat Messages Area -->
-        <div
-          id="chatbot-messages"
-          style="
-            font-size: 0.9rem;
-            padding: 10px;
-            height: 300px;
-            overflow-y: auto;
-          "
-        >
-          <div style="margin-bottom: 8px; color: black">
-            <strong>Heman:</strong> How can I help you?
-          </div>
+      <div id="chatbot-window" style="display: none; position: absolute; bottom: 80px; right: 0; width: 300px; max-height: 400px; background: rgba(212, 230, 227, 0.9); border-radius: 10px; overflow: hidden;">
+        <div id="chatbot-messages" style="font-size: 0.9rem; padding: 10px; height: 300px; overflow-y: auto;">
+          <div style="margin-bottom: 8px; color: black"><strong>Heman:</strong> How can I help you?</div>
         </div>
-
-        <!-- Chatbot Input Area -->
-        <div
-          style="
-            background: #111;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-          "
-        >
-          <input
-            type="text"
-            id="chatbot-input"
-            placeholder="Type a message..."
-            style="
-              flex: 1;
-              padding: 5px;
-              border: none;
-              border-radius: 5px;
-              margin-right: 5px;
-            "
-          />
-          <button
-            id="chatbot-send"
-            style="
-              padding: 5px 10px;
-              border: none;
-              border-radius: 5px;
-              background: #00aaff;
-              color: #fff;
-              cursor: pointer;
-            "
-          >
-            Send
-          </button>
+        <div style="background: #111; padding: 10px; display: flex; align-items: center;">
+          <input type="text" id="chatbot-input" placeholder="Type a message..." style="flex: 1; padding: 5px; border: none; border-radius: 5px; margin-right: 5px;"/>
+          <button id="chatbot-send" style="padding: 5px 10px; border: none; border-radius: 5px; background: #00aaff; color: #fff; cursor: pointer;">Send</button>
         </div>
       </div>
     </div>
 
     <!-- Admin Panel Trigger Button -->
-    <button
-      id="admin-panel-btn"
-      style="
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 1000;
-        padding: 10px 15px;
-        background: #00aaff;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-        cursor: pointer;
-      "
-    >
-      Ad
-    </button>
+    <button id="admin-panel-btn" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; padding: 10px 15px; background: #00aaff; border: none; border-radius: 5px; color: #fff; cursor: pointer;">Ad</button>
 
     <!-- Admin Login & Data Modal -->
-    <div
-      id="admin-modal"
-      style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 2000;
-      "
-    >
-      <div
-        style="
-          position: relative;
-          width: 90%;
-          max-width: 600px;
-          margin: 50px auto;
-          background: #fff;
-          color: #333;
-          border-radius: 10px;
-          padding: 20px;
-        "
-      >
-        <span
-          id="admin-close"
-          style="
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            cursor: pointer;
-            font-size: 1.5rem;
-          "
-          >&times;</span
-        >
-        <div id="admin-login" style="display: block">
+    <div id="admin-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000;">
+      <div style="position: relative; width: 90%; max-width: 600px; margin: 50px auto; background: #fff; color: #333; border-radius: 10px; padding: 20px;">
+        <span id="admin-close" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem;">&times;</span>
+        <div id="admin-login" style="display: block;">
           <h3>Admin Login</h3>
-          <input
-            type="password"
-            id="admin-password"
-            placeholder="Enter password"
-            style="width: 100%; padding: 10px; margin-bottom: 15px"
-          />
-          <button
-            id="admin-login-btn"
-            style="
-              padding: 10px 15px;
-              background: #00aaff;
-              border: none;
-              color: #fff;
-              cursor: pointer;
-            "
-          >
-            Login
-          </button>
-          <div id="admin-error" style="color: red; margin-top: 10px"></div>
+          <input type="password" id="admin-password" placeholder="Enter password" style="width: 100%; padding: 10px; margin-bottom: 15px;" />
+          <button id="admin-login-btn" style="padding: 10px 15px; background: #00aaff; border: none; color: #fff; cursor: pointer;">Login</button>
+          <div id="admin-error" style="color: red; margin-top: 10px;"></div>
         </div>
-        <div id="admin-data" style="display: none">
+        <div id="admin-data" style="display: none;">
           <h3>Submissions & Chat Log</h3>
           <h4>Contact Form Submissions</h4>
-          <pre
-            id="form-data"
-            style="
-              background: #f5f5f5;
-              padding: 10px;
-              max-height: 150px;
-              overflow-y: auto;
-            "
-          ></pre>
+          <pre id="form-data" style="background: #f5f5f5; padding: 10px; max-height: 150px; overflow-y: auto;"></pre>
           <h4>Chatbot Conversation</h4>
-          <pre
-            id="chat-data"
-            style="
-              background: #f5f5f5;
-              padding: 10px;
-              max-height: 150px;
-              overflow-y: auto;
-            "
-          ></pre>
+          <pre id="chat-data" style="background: #f5f5f5; padding: 10px; max-height: 150px; overflow-y: auto;"></pre>
         </div>
       </div>
     </div>
@@ -1580,42 +747,31 @@
     <script src="js/now-ui-kit.js?ver=1.1.0"></script>
     <script src="js/aos.js?ver=1.1.0"></script>
     <script src="scripts/main.js?ver=1.1.0"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         AOS.init();
       });
       $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-          $(".navbar").addClass("scrolled");
-        } else {
-          $(".navbar").removeClass("scrolled");
-        }
+        if ($(this).scrollTop() > 50) { $(".navbar").addClass("scrolled"); }
+        else { $(".navbar").removeClass("scrolled"); }
       });
-
       // Smooth carousel scroll function
       function scrollCarousel(carouselId, distance) {
-        document.getElementById(carouselId).scrollBy({
-          top: 0,
-          left: distance,
-          behavior: "smooth",
-        });
+        document.getElementById(carouselId).scrollBy({ top: 0, left: distance, behavior: "smooth" });
       }
     </script>
 
     <!-- Current News widget logic -->
     <script>
       (function () {
-        const news = document.getElementById("news-widget");
         const list = document.getElementById("news-list");
         const toggle = document.getElementById("news-toggle");
         const viewport = document.getElementById("news-viewport");
 
         if (list) {
-          // Duplicate items for seamless loop
           const items = Array.from(list.children);
           items.forEach((li) => list.appendChild(li.cloneNode(true)));
-
-          // Adjust animation duration by content height for smooth speed
           function setDuration() {
             const totalHeight = list.scrollHeight;
             const pps = 30; // pixels per second
@@ -1626,17 +782,11 @@
           window.addEventListener("resize", setDuration);
         }
 
-        // Collapse / Expand
         let collapsed = false;
         toggle.addEventListener("click", () => {
           collapsed = !collapsed;
-          if (collapsed) {
-            viewport.style.display = "none";
-            toggle.textContent = "+";
-          } else {
-            viewport.style.display = "block";
-            toggle.textContent = "–";
-          }
+          if (collapsed) { viewport.style.display = "none"; toggle.textContent = "+"; }
+          else { viewport.style.display = "block"; toggle.textContent = "–"; }
         });
       })();
     </script>
@@ -1644,23 +794,17 @@
     <!-- Chatbot + LocalStorage + Admin Panel Logic -->
     <script>
       (function () {
-        // References
+        // Chatbot
         const chatbotToggleBtn = document.getElementById("chatbot-toggle-btn");
         const chatbotWindow = document.getElementById("chatbot-window");
         const chatbotInput = document.getElementById("chatbot-input");
         const chatbotSend = document.getElementById("chatbot-send");
         const chatbotMessages = document.getElementById("chatbot-messages");
 
-        // Toggle the chatbot window
         chatbotToggleBtn.addEventListener("click", () => {
-          chatbotWindow.style.display =
-            chatbotWindow.style.display === "none" ||
-            chatbotWindow.style.display === ""
-              ? "block"
-              : "none";
+          chatbotWindow.style.display = (chatbotWindow.style.display === "none" || chatbotWindow.style.display === "") ? "block" : "none";
         });
 
-        // Chatbot predefined responses
         const responses = [
           "I'm here to assist you!",
           "Can you provide more details?",
@@ -1668,109 +812,63 @@
           "How can I further assist you?",
           "That's an interesting question!",
         ];
-        let lastResponse = ""; // Stores the last chatbot response to prevent repetition
+        let lastResponse = "";
 
         function getChatbotResponse() {
           let newResponse;
-          do {
-            newResponse =
-              responses[Math.floor(Math.random() * responses.length)];
-          } while (newResponse === lastResponse); // Ensure it doesn't repeat
+          do { newResponse = responses[Math.floor(Math.random() * responses.length)]; }
+          while (newResponse === lastResponse);
           lastResponse = newResponse;
           return newResponse;
         }
 
-        // Append a message to the chat log
         function appendMessage(sender, message, isUser = false) {
           const msgDiv = document.createElement("div");
           msgDiv.style.marginBottom = "8px";
           msgDiv.style.padding = "5px";
           msgDiv.style.borderRadius = "5px";
           msgDiv.style.wordWrap = "break-word";
-
-          // Different styles for user and chatbot messages
-          if (isUser) {
-            msgDiv.style.background = "#00aaff";
-            msgDiv.style.color = "#fff";
-            msgDiv.style.textAlign = "right";
-          } else {
-            msgDiv.style.background = "#f1f1f1";
-            msgDiv.style.color = "black";
-            msgDiv.style.textAlign = "left";
-          }
-
+          if (isUser) { msgDiv.style.background = "#00aaff"; msgDiv.style.color = "#fff"; msgDiv.style.textAlign = "right"; }
+          else { msgDiv.style.background = "#f1f1f1"; msgDiv.style.color = "black"; msgDiv.style.textAlign = "left"; }
           msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
           chatbotMessages.appendChild(msgDiv);
-          chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Auto-scroll
-
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
           // Save chat data
-          saveChatData(sender, message);
-        }
-
-        // Save chat data in localStorage
-        function saveChatData(sender, message) {
           let chatLog = JSON.parse(localStorage.getItem("chatLog")) || [];
           chatLog.push({ sender, message, time: new Date().toLocaleString() });
           localStorage.setItem("chatLog", JSON.stringify(chatLog));
         }
 
-        // Send message
         chatbotSend.addEventListener("click", () => {
           const message = chatbotInput.value.trim();
           if (message !== "") {
             appendMessage("You", message, true);
             chatbotInput.value = "";
-
-            // Generate a dynamic chatbot response
-            setTimeout(() => {
-              appendMessage("Heman", getChatbotResponse(), false);
-            }, 500);
+            setTimeout(() => { appendMessage("Heman", getChatbotResponse(), false); }, 500);
           }
         });
 
-        // Press Enter to send message
-        chatbotInput.addEventListener("keypress", (e) => {
-          if (e.key === "Enter") {
-            chatbotSend.click();
-          }
-        });
+        chatbotInput.addEventListener("keypress", (e) => { if (e.key === "Enter") chatbotSend.click(); });
 
-        // Auto-open chatbot after 10 seconds
         document.addEventListener("DOMContentLoaded", function () {
-          setTimeout(() => {
-            chatbotWindow.style.display = "block";
-          }, 10000); // 10 seconds delay
+          setTimeout(() => { chatbotWindow.style.display = "block"; }, 10000);
         });
-      })();
 
-      // Contact Form Submission Data Saving
-      (function () {
-        const contactForm = document.querySelector(
-          'form[action^="https://formspree.io"]',
-        );
+        // Contact Form local save
+        const contactForm = document.querySelector('form[action^="https://formspree.io"]');
         if (contactForm) {
           contactForm.addEventListener("submit", function () {
             const formData = new FormData(contactForm);
             const formObj = {};
-            formData.forEach((value, key) => {
-              formObj[key] = value;
-            });
+            formData.forEach((value, key) => { formObj[key] = value; });
             formObj.time = new Date().toLocaleString();
-
-            // Save form submission data in localStorage
-            let submissions =
-              JSON.parse(localStorage.getItem("formSubmissions")) || [];
+            let submissions = JSON.parse(localStorage.getItem("formSubmissions")) || [];
             submissions.push(formObj);
-            localStorage.setItem(
-              "formSubmissions",
-              JSON.stringify(submissions),
-            );
+            localStorage.setItem("formSubmissions", JSON.stringify(submissions));
           });
         }
-      })();
 
-      // Admin Panel Functionality
-      (function () {
+        // Admin Panel
         const adminBtn = document.getElementById("admin-panel-btn");
         const adminModal = document.getElementById("admin-modal");
         const adminClose = document.getElementById("admin-close");
@@ -1782,7 +880,6 @@
         const formDataDisplay = document.getElementById("form-data");
         const chatDataDisplay = document.getElementById("chat-data");
 
-        // Show modal on admin button click
         adminBtn.addEventListener("click", () => {
           adminModal.style.display = "block";
           adminLogin.style.display = "block";
@@ -1791,42 +888,71 @@
           adminError.innerText = "";
         });
 
-        // Close modal
-        adminClose.addEventListener("click", () => {
-          adminModal.style.display = "none";
-        });
+        adminClose.addEventListener("click", () => { adminModal.style.display = "none"; });
 
-        // On login click, check password (example: "admin123")
         adminLoginBtn.addEventListener("click", () => {
           const pwd = adminPasswordInput.value;
           if (pwd === "admin123") {
             adminLogin.style.display = "none";
             adminData.style.display = "block";
-
-            // Display stored form submissions
-            const submissions =
-              JSON.parse(localStorage.getItem("formSubmissions")) || [];
-            formDataDisplay.textContent =
-              submissions.length > 0
-                ? JSON.stringify(submissions, null, 2)
-                : "No form submissions found.";
-
-            // Display chat log
+            const submissions = JSON.parse(localStorage.getItem("formSubmissions")) || [];
+            formDataDisplay.textContent = submissions.length > 0 ? JSON.stringify(submissions, null, 2) : "No form submissions found.";
             const chatLog = JSON.parse(localStorage.getItem("chatLog")) || [];
-            chatDataDisplay.textContent =
-              chatLog.length > 0
-                ? JSON.stringify(chatLog, null, 2)
-                : "No chat history available.";
-          } else {
-            adminError.innerText = "Incorrect password!";
-          }
+            chatDataDisplay.textContent = chatLog.length > 0 ? JSON.stringify(chatLog, null, 2) : "No chat history available.";
+          } else { adminError.innerText = "Incorrect password!"; }
         });
 
-        // Close modal when clicking outside it
-        window.addEventListener("click", (e) => {
-          if (e.target === adminModal) {
-            adminModal.style.display = "none";
-          }
+        window.addEventListener("click", (e) => { if (e.target === adminModal) adminModal.style.display = "none"; });
+      })();
+    </script>
+
+    <!-- Lightbox for Gallery -->
+    <div class="lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+      <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+      <button class="lb-btn lb-prev" aria-label="Previous image">&#10094;</button>
+      <img class="lb-image" src="" alt="">
+      <button class="lb-btn lb-next" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <script>
+      // Gallery Lightbox Logic
+      (function () {
+        const cards = Array.from(document.querySelectorAll('#gallery .gallery-card'));
+        if (!cards.length) return;
+        const lb = document.getElementById('galleryLightbox');
+        const lbImg = lb.querySelector('.lb-image');
+        const btnPrev = lb.querySelector('.lb-prev');
+        const btnNext = lb.querySelector('.lb-next');
+        const btnClose = lb.querySelector('.lb-close');
+
+        let current = 0;
+
+        function show(index) {
+          current = index;
+          const fullSrc = cards[current].getAttribute('data-full') || cards[current].querySelector('img').src;
+          const alt = cards[current].getAttribute('data-caption') || cards[current].querySelector('img').alt || '';
+          lbImg.src = fullSrc; lbImg.alt = alt;
+          lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+        function close() {
+          lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          setTimeout(() => { lbImg.src = ''; }, 150);
+        }
+        function prev() { show((current - 1 + cards.length) % cards.length); }
+        function next() { show((current + 1) % cards.length); }
+
+        cards.forEach((card, i) => { card.addEventListener('click', () => show(i)); });
+        btnPrev.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+        btnNext.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+        btnClose.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+        lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+        document.addEventListener('keydown', (e) => {
+          if (!lb.classList.contains('is-open')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') prev();
+          if (e.key === 'ArrowRight') next();
         });
       })();
     </script>
