@@ -33,6 +33,7 @@
         width: 100%; height: 100%;
         object-fit: cover;
       }
+
       /* Translucent backgrounds for navbar, hero, sections, and footer */
       .navbar, .page-header, .section, .footer { background: rgba(0, 0, 0, 0.7); }
 
@@ -69,6 +70,37 @@
         text-align: center; z-index: 10;
       }
       .hero-social a { margin: 0 8px; }
+
+      /* ===== Center Rotating Text (Hero Only) ===== */
+      .hero-rotator {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 15;             /* above hero content & video */
+        text-align: center;
+        pointer-events: none;     /* clicks pass through */
+        padding: 8px 16px;
+        border-radius: 10px;
+      }
+      .hero-rotator #rotatingText {
+        display: inline-block;
+        font-weight: 500;
+        letter-spacing: .5px;
+        text-shadow: 0 3px 18px rgba(0,0,0,.6);
+        line-height: 1.2;
+        animation: fadeInOut 2.4s ease-in-out infinite;
+      }
+      /* responsive sizing */
+      @media (min-width: 1200px) { .hero-rotator #rotatingText { font-size: 36px; } }
+      @media (min-width: 768px) and (max-width: 1199px) { .hero-rotator #rotatingText { font-size: 26px; } }
+      @media (max-width: 767px) { .hero-rotator #rotatingText { font-size: 16px; } }
+
+      @keyframes fadeInOut {
+        0%    { opacity: 0; transform: translateY(6px); }
+        10%   { opacity: 1; transform: translateY(0); }
+        70%   { opacity: 1; transform: translateY(0); }
+        100%  { opacity: 0; transform: translateY(-6px); }
+      }
 
       /* Section styling */
       .section { padding: 50px 0; }
@@ -227,6 +259,7 @@
 
     <!-- Full-Screen Hero Section -->
     <div class="page-header">
+      <!-- Left hero content (unchanged) -->
       <div class="hero-content">
         <div class="cc-profile-image"><a href="#"><img src="images/IMG_1225.jpg" alt="Profile" /></a></div>
         <div class="h2 title" style="margin-bottom: 15px">Heman</div>
@@ -236,6 +269,13 @@
           <a class="btn btn-primary" href="images/Heman_Resume_up.pdf" target="_blank">Download CV</a>
         </div>
       </div>
+
+      <!-- Centered Rotating Text (NEW) -->
+      <div class="hero-rotator" aria-live="polite">
+        <span id="rotatingText">Master’s in Robotics</span>
+      </div>
+
+      <!-- Social icons -->
       <div class="hero-social">
         <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/heman-saini-5b2309189/" rel="tooltip" title="Follow me on LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>
         <a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/Heman15" rel="tooltip" title="Follow me on Github" target="_blank"><i class="fa fa-github"></i></a>
@@ -286,41 +326,41 @@
       </div> 
       <!-- End About Section -->
 
-      <!-- Gallery Section (NEW) -->
+      <!-- Gallery Section -->
       <div class="section" id="gallery">
         <div class="container">
           <div class="h4 text-center mb-4 title">Gallery</div>
           <div class="gallery-grid">
             <!-- Replace with your images -->
-            <figure class="gallery-card" data-full="images/IMG_1204.jpg" data-caption="Project 1">
+            <figure class="gallery-card" data-full="images/IMG_1204.jpg" data-caption="Human-robot interaction">
               <img src="images/IMG_1204.jpg" alt="Human-robot interaction">
               <figcaption>Human-robot interaction</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_9805.jpg" data-caption="Project 2">
+            <figure class="gallery-card" data-full="images/IMG_9805.jpg" data-caption="Kinova-Gen3">
               <img src="images/IMG_9805.jpg" alt="Kinova-Gen3">
               <figcaption>Kinova-Gen3</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_9948.jpg" data-caption="Project 3">
+            <figure class="gallery-card" data-full="images/IMG_9948.jpg" data-caption="Aloha_V2 Teleoperations">
               <img src="images/IMG_9948.jpg" alt="Aloha_V2 Teleoperations">
               <figcaption>Aloha_V2 Teleoperations</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_6172.jpg" data-caption="Project 4">
+            <figure class="gallery-card" data-full="images/IMG_6172.jpg" data-caption="IDETC-UCR2025">
               <img src="images/IMG_6172.jpg" alt="IDETC-UCR2025">
               <figcaption>IDETC-UCR2025</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_4242.JPG" data-caption="Project 5">
+            <figure class="gallery-card" data-full="images/IMG_4242.JPG" data-caption="UCLA-Wrapup">
               <img src="images/IMG_4242.JPG" alt="UCLA-Wrapup">
               <figcaption>UCLA-Wrapup</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_0344.jpg" data-caption="Project 5">
+            <figure class="gallery-card" data-full="images/IMG_0344.jpg" data-caption="Thermoforming">
               <img src="images/IMG_0344.jpg" alt="Thermoforming">
               <figcaption>Thermoforming</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_0352.jpg" data-caption="Project 5">
+            <figure class="gallery-card" data-full="images/IMG_0352.jpg" data-caption="Prototype bike accessory">
               <img src="images/IMG_0352.jpg" alt="Prototype bike accessory">
               <figcaption>Prototype bike accessory</figcaption>
             </figure>
-            <figure class="gallery-card" data-full="images/IMG_4206.JPG" data-caption="Project 5">
+            <figure class="gallery-card" data-full="images/IMG_4206.JPG" data-caption="Work with point cloud data">
               <img src="images/IMG_4206.JPG" alt="Work with point cloud data">
               <figcaption>Work with point cloud data</figcaption>
             </figure>
@@ -778,6 +818,33 @@
       }
     </script>
 
+    <!-- Rotating text logic (Hero center) -->
+    <script>
+      (function () {
+        const el = document.getElementById('rotatingText');
+        if (!el) return;
+
+        // Edit your phrases here:
+        const phrases = [
+          "Master’s in Robotics",
+          "Bachelor's in Mechanical Engineering",
+          "From sketch to assembly — precision in every part."
+          "4 years in Mechanical Design & R&D"
+          "Bridging hardware and intelligence"
+          "Designing for efficiency, manufacturability, and performance"
+        ];
+
+        let i = 0;
+        function cycle() {
+          i = (i + 1) % phrases.length;
+          // sync with CSS fade keyframes length (2.4s)
+          el.textContent = phrases[i];
+        }
+        // start with first phrase already in DOM; change every 2.4s
+        setInterval(cycle, 2400);
+      })();
+    </script>
+
     <!-- Current News widget logic -->
     <script>
       (function () {
@@ -907,7 +974,7 @@
         adminClose.addEventListener("click", () => { adminModal.style.display = "none"; });
 
         adminLoginBtn.addEventListener("click", () => {
-          const pwd = adminPasswordInput.value;
+          const pwd = document.getElementById("admin-password").value;
           if (pwd === "admin123") {
             adminLogin.style.display = "none";
             adminData.style.display = "block";
