@@ -868,11 +868,19 @@
         }
 
         let collapsed = true;
+        toggle.textContent = "+"; // start closed
+        
         toggle.addEventListener("click", () => {
           collapsed = !collapsed;
-          if (collapsed) { viewport.style.display = "none"; toggle.textContent = "+"; }
-          else { viewport.style.display = "block"; toggle.textContent = "–"; }
+          if (collapsed) {
+            viewport.style.display = "none";
+            toggle.textContent = "+";  // plus when closed
+          } else {
+            viewport.style.display = "block";
+            toggle.textContent = "–";  // minus when open
+          }
         });
+
       })();
     </script>
 
